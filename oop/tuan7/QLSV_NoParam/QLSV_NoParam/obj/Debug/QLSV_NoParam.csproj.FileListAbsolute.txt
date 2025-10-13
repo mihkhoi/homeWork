@@ -1,0 +1,10 @@
+D:\Code\oop\tuan7\QLSV_NoParam\QLSV_NoParam\bin\Debug\QLSV_NoParam.exe.config
+D:\Code\oop\tuan7\QLSV_NoParam\QLSV_NoParam\bin\Debug\QLSV_NoParam.exe
+D:\Code\oop\tuan7\QLSV_NoParam\QLSV_NoParam\bin\Debug\QLSV_NoParam.pdb
+D:\Code\oop\tuan7\QLSV_NoParam\QLSV_NoParam\obj\Debug\QLSV_NoParam.csproj.AssemblyReference.cache
+D:\Code\oop\tuan7\QLSV_NoParam\QLSV_NoParam\obj\Debug\QLSV_NoParam.Properties.Resources.resources
+D:\Code\oop\tuan7\QLSV_NoParam\QLSV_NoParam\obj\Debug\QLSV_NoParam.csproj.GenerateResource.cache
+D:\Code\oop\tuan7\QLSV_NoParam\QLSV_NoParam\obj\Debug\QLSV_NoParam.csproj.CoreCompileInputs.cache
+D:\Code\oop\tuan7\QLSV_NoParam\QLSV_NoParam\obj\Debug\QLSV_NoParam.exe
+D:\Code\oop\tuan7\QLSV_NoParam\QLSV_NoParam\obj\Debug\QLSV_NoParam.pdb
+D:\Code\oop\tuan7\QLSV_NoParam\QLSV_NoParam\obj\Debug\QLSV_NoParam.exe.config
