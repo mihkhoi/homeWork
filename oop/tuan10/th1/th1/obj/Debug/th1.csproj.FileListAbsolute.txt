@@ -1,0 +1,9 @@
+D:\Code\oop\tuan10\th1\th1\bin\Debug\th1.exe.config
+D:\Code\oop\tuan10\th1\th1\bin\Debug\th1.exe
+D:\Code\oop\tuan10\th1\th1\bin\Debug\th1.pdb
+D:\Code\oop\tuan10\th1\th1\obj\Debug\th1.csproj.AssemblyReference.cache
+D:\Code\oop\tuan10\th1\th1\obj\Debug\th1.Properties.Resources.resources
+D:\Code\oop\tuan10\th1\th1\obj\Debug\th1.csproj.GenerateResource.cache
+D:\Code\oop\tuan10\th1\th1\obj\Debug\th1.csproj.CoreCompileInputs.cache
+D:\Code\oop\tuan10\th1\th1\obj\Debug\th1.exe
+D:\Code\oop\tuan10\th1\th1\obj\Debug\th1.pdb
