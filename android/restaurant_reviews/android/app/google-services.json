@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "597268819707",
+    "project_id": "restaurant-reviews-b09c0",
+    "storage_bucket": "restaurant-reviews-b09c0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597268819707:android:c34a127df3dfff59204a5e",
+        "android_client_info": {
+          "package_name": "com.example.restaurant_reviews"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUHSttGvYc1eqjs5KBwTHymD-H5CAZH_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
