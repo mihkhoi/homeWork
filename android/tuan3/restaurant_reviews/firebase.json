@@ -1,0 +1,42 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "restaurantreviews-8a8c5",
+          "appId": "1:595053243328:android:d83ecddaf4e5c89b3b7625",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "restaurantreviews-8a8c5",
+          "configurations": {
+            "android": "1:595053243328:android:d83ecddaf4e5c89b3b7625",
+            "ios": "1:595053243328:ios:c1fe2117749997f93b7625",
+            "macos": "1:595053243328:ios:c1fe2117749997f93b7625",
+            "web": "1:595053243328:web:e3437208e6f3f5fb3b7625",
+            "windows": "1:595053243328:web:0372c158079c29203b7625"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "disallowLegacyRuntimeConfig": true,
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ]
+}

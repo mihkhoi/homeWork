@@ -1,0 +1,21 @@
+Chương 1: Khởi đầu
+
+Buổi sáng hôm ấy trời trong và gió nhẹ. Minh ngồi một mình trong quán cà phê nhỏ ở góc phố, trước mặt là chiếc laptop cũ và một cuốn sổ tay đầy những gạch đầu dòng. Cậu luôn mơ về việc xây dựng một ứng dụng đọc sách điện tử, nơi mọi người có thể mang theo cả thư viện trong túi áo.
+
+Bên ngoài cửa kính, dòng người vẫn tấp nập. Minh nhấp một ngụm cà phê, mở cuốn sổ và viết thêm dòng chữ: "Hôm nay phải bắt đầu, dù chỉ là một trang mã đầu tiên." Cậu mỉm cười, nhấn nút nguồn và bắt đầu gõ.
+
+ 
+
+Chương 2: Ý tưởng
+
+Thay vì cố gắng xây dựng một hệ thống quá phức tạp ngay từ đầu, Minh quyết định bắt đầu với những tính năng đơn giản nhất: xem danh sách sách, mở sách, lật trang và lưu lại trang đang đọc dở. Cậu biết rằng chỉ cần làm tốt những điều cơ bản, mọi thứ khác sẽ dần dần hoàn thiện.
+
+Minh phác thảo giao diện: một màn hình chính hiển thị danh sách các cuốn sách với ảnh bìa, tiêu đề và tên tác giả. Khi người dùng chọn một cuốn sách, ứng dụng sẽ mở ra màn hình đọc, nơi họ có thể vuốt sang trái hoặc phải để lật trang như đọc một cuốn sách thật.
+
+ 
+
+Chương 3: Những dòng code đầu tiên
+
+Buổi tối, Minh mở môi trường phát triển Flutter. Cậu tạo một project mới, thêm thư viện provider và sqflite vào file pubspec.yaml. Sau đó, từng chút một, Minh xây dựng mô hình dữ liệu Book, lớp DbHelper để lưu trang cuối cùng đã đọc, và một màn hình ReaderScreen với PageView để lật trang.
+
+Mỗi lần chạy thử ứng dụng, Minh lại cảm thấy một chút phấn khích. Dù giao diện vẫn còn đơn giản, nhưng cảm giác vuốt trang và thấy chữ trôi đi trước mắt khiến cậu tin rằng mình đang đi đúng hướng. Cậu tự nhủ: "Ngày mai sẽ thêm dark mode và chỉnh kích thước chữ."

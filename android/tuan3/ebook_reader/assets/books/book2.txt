@@ -1,0 +1,21 @@
+Phần 1: Người đọc bí ẩn
+
+Trong một thư viện yên tĩnh ở ngoại ô thành phố, Lan làm thủ thư đã hơn năm năm. Mỗi ngày, cô đều gặp những người yêu sách, nhưng có một vị khách đặc biệt khiến cô tò mò. Anh ta luôn đến vào cuối buổi chiều, chọn một góc cố định gần cửa sổ và đọc trên chiếc máy tính bảng của mình.
+
+Lan nhận ra rằng anh không bao giờ mượn sách giấy, nhưng lại ghé thư viện đều đặn. Một hôm, cô lấy hết can đảm tiến lại gần và hỏi: "Anh đọc gì vậy?" Anh mỉm cười, nghiêng màn hình cho cô xem. Đó là một ứng dụng sách điện tử với giao diện tối giản nhưng rất đẹp.
+
+ 
+
+Phần 2: Câu chuyện phía sau
+
+Anh giới thiệu rằng mình là lập trình viên và đang thử nghiệm ứng dụng mà anh tự viết. Ứng dụng cho phép người dùng đồng bộ hóa trang đang đọc giữa nhiều thiết bị, lưu cài đặt như chế độ tối và kích thước chữ. Lan chăm chú lắng nghe, trong lòng bắt đầu nhen nhóm một ý tưởng: có lẽ thư viện cũng nên có một phiên bản điện tử của những cuốn sách phổ biến.
+
+Hai người ngồi trò chuyện khá lâu. Lan kể về những bạn đọc phải đi xa không thể đến thư viện thường xuyên. Anh thì chia sẻ về việc dùng SQLite để lưu cài đặt trên máy, và API để tải danh sách sách từ máy chủ. Họ nhận ra rằng, nếu kết hợp kiến thức của cả hai, họ có thể tạo ra một hệ thống giúp sách đến gần hơn với mọi người.
+
+ 
+
+Phần 3: Thư viện số
+
+Vài tháng sau, thư viện tổ chức buổi giới thiệu ứng dụng đọc sách điện tử mới. Người dùng có thể quét mã QR trên kệ sách để tải phiên bản điện tử về điện thoại của mình, tiếp tục đọc ngay cả khi rời khỏi thư viện. Lan đứng bên cạnh màn hình trình chiếu, nhìn dòng người trải nghiệm ứng dụng với ánh mắt tự hào.
+
+Trong góc phòng, anh lập trình viên lặng lẽ quan sát. Anh biết rằng những dòng code của mình không chỉ là lệnh máy tính, mà còn là cây cầu nối giữa những người yêu sách và tri thức. Tất cả bắt đầu chỉ từ một ý tưởng nhỏ và vài tệp văn bản đơn giản trong thư mục assets.
