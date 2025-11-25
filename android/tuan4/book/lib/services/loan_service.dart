@@ -1,65 +1,52 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class LoanService {
-  final CollectionReference loansRef = FirebaseFirestore.instance.collection(
-    'loans',
-  );
-  final CollectionReference booksRef = FirebaseFirestore.instance.collection(
-    'books',
-  );
+  final FirebaseFirestore _db = FirebaseFirestore.instance;
 
-  /// User mượn sách:
-  /// - Đếm số lượt mượn đang mở (status = borrowing) của cuốn đó
-  /// - Nếu < totalCopies -> cho mượn, cập nhật availableCopies = total - số_đang_mượn_mới
   Future<void> borrowBook({
     required String userId,
     required String bookId,
   }) async {
     final now = DateTime.now();
-    final due = now.add(const Duration(days: 7)); // hạn trả 7 ngày (tùy bạn)
+    final due = now.add(const Duration(days: 7)); // hạn trả 7 ngày
 
-    final bookDocRef = booksRef.doc(bookId);
-    final bookSnap = await bookDocRef.get();
-    if (!bookSnap.exists) {
-      throw Exception('Sách không tồn tại');
-    }
+    await _db.runTransaction((tx) async {
+      // -------- LẤY THÔNG TIN SÁCH --------
+      final bookRef = _db.collection('books').doc(bookId);
+      final bookSnap = await tx.get(bookRef);
 
-    final bookData = bookSnap.data() as Map<String, dynamic>;
-    final int total = (bookData['totalCopies'] ?? 0) as int;
+      if (!bookSnap.exists) {
+        throw Exception('Sách không tồn tại');
+      }
 
-    // Lấy tất cả loan của cuốn này (chỉ where 1 field để khỏi cần index)
-    final loansSnap = await loansRef.where('bookId', isEqualTo: bookId).get();
+      final data = bookSnap.data() as Map<String, dynamic>;
+      final int total = (data['totalCopies'] ?? 0) as int;
+      final int available =
+          (data['availableCopies'] ?? total)
+              as int; // fallback nếu chưa có field
 
-    // Đếm số loan đang mượn
-    final int borrowingCount = loansSnap.docs.where((doc) {
-      final data = doc.data() as Map<String, dynamic>;
-      return data['status'] == 'borrowing';
-    }).length;
+      if (available <= 0) {
+        throw Exception('Sách đã hết, không thể mượn');
+      }
 
-    // Nếu đã đủ số bản cho mượn -> chặn
-    if (borrowingCount >= total) {
-      throw Exception('Sách đã hết, không thể mượn');
-    }
+      // -------- TẠO LOAN MỚI --------
+      final loanRef = _db.collection('loans').doc(); // /loans/{loanId}
 
-    // Sau khi mượn thêm 1 bản:
-    final int newBorrowingCount = borrowingCount + 1;
-    final int newAvailable = total - newBorrowingCount;
-
-    await FirebaseFirestore.instance.runTransaction((transaction) async {
-      // Cập nhật lại sách theo số lượng đang mượn thực tế
-      transaction.update(bookDocRef, {
-        'availableCopies': newAvailable,
-        'isAvailable': newAvailable > 0,
-      });
-
-      // Tạo loan mới
-      transaction.set(loansRef.doc(), {
-        'userId': userId,
+      tx.set(loanRef, {
+        'userId': userId, // PHẢI có, để trùng với auth.uid
         'bookId': bookId,
-        'borrowDate': now,
-        'dueDate': due,
+        'borrowDate': Timestamp.fromDate(now),
+        'dueDate': Timestamp.fromDate(due),
         'returnDate': null,
         'status': 'borrowing',
+      });
+
+      // -------- CẬP NHẬT LẠI SÁCH --------
+      final newAvailable = available - 1;
+
+      tx.update(bookRef, {
+        'availableCopies': newAvailable,
+        'isAvailable': newAvailable > 0,
       });
     });
   }
