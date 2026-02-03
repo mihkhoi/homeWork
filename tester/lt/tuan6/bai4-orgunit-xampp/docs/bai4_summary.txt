@@ -1,0 +1,6 @@
+Bài 4 - Add Organization Unit
+Tổng test case: 10
+PASS: 9
+FAIL: 1
+Tổng bug: 1 (Open)
+DB: MySQL (XAMPP)

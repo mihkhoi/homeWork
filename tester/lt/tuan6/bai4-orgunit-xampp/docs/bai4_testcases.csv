@@ -1,0 +1,11 @@
+TC_ID,Scenario,Precondition,Steps,TestData,Expected,Actual,Status
+B4_TC01,Hiển thị form,XAMPP MySQL running,"1) Open /org-unit/add",NA,Form có UnitId/Name/Desc/Cancel/Save,OK,PASS
+B4_TC02,UnitId rỗng,XAMPP MySQL running,"1) UnitId='' 2) Name='HR' 3) Save","",Báo lỗi Unit Id required,Hiện lỗi,PASS
+B4_TC03,Name rỗng,XAMPP MySQL running,"1) UnitId='OU01' 2) Name='' 3) Save","",Báo lỗi Name required,Hiện lỗi,PASS
+B4_TC04,UnitId > 20 ký tự,XAMPP MySQL running,"1) UnitId 21 chars 2) Name OK 3) Save","UnitId=XXXXXXXXXXXXXXXXXXXXX",Báo lỗi max 20,Hiện lỗi,PASS
+B4_TC05,Name > 100 ký tự,XAMPP MySQL running,"1) UnitId OK 2) Name 101 chars 3) Save","Name=101 chars",Báo lỗi max 100,Hiện lỗi,PASS
+B4_TC06,Lưu hợp lệ,XAMPP MySQL running,"1) UnitId='OU01' 2) Name='HR' 3) Desc='abc' 4) Save","OU01,HR,abc",Lưu DB + thông báo Saved successfully,Đã lưu,PASS
+B4_TC07,UnitId trùng,XAMPP MySQL running,"1) Đã có OU01 2) nhập OU01 3) Save","OU01,Finance",Báo Unit Id already exists,Báo trùng,PASS
+B4_TC08,Cancel không lưu,XAMPP MySQL running,"1) UnitId='OU02' Name='IT' 2) Cancel","OU02,IT",Không lưu DB + quay lại form,Không lưu,PASS
+B4_TC09,Description quá dài (bug demo),XAMPP MySQL running,"1) UnitId='OU03' Name='Ops' 2) Desc 2000 chars 3) Save","Desc=2000 chars",Nên báo lỗi độ dài Desc,Không báo lỗi và vẫn lưu,FAIL
+B4_TC10,Kiểm tra bản ghi trong MySQL,XAMPP MySQL running,"1) Save OU01 2) vào phpMyAdmin chạy SELECT","select * from org_units",Có record OU01,Thấy record,PASS

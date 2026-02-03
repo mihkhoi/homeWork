@@ -1,0 +1,126 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Add Organization Unit</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 24px;
+                background: #fff;
+            }
+            .box {
+                max-width: 760px;
+                border: 1px solid #e2e2e2;
+                padding: 18px;
+                border-radius: 10px;
+            }
+            h2 {
+                margin: 0 0 12px 0;
+            }
+            label {
+                display: block;
+                margin-top: 12px;
+                color: #333;
+                font-size: 14px;
+            }
+            input,
+            textarea {
+                width: 100%;
+                padding: 10px;
+                margin-top: 6px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 14px;
+            }
+            textarea {
+                resize: vertical;
+            }
+            .err {
+                color: #c00;
+                font-size: 13px;
+                margin-top: 4px;
+            }
+            .row {
+                display: flex;
+                gap: 12px;
+                justify-content: flex-end;
+                margin-top: 14px;
+            }
+            button {
+                padding: 10px 18px;
+                border-radius: 999px;
+                border: 1px solid #aaa;
+                cursor: pointer;
+                background: #fff;
+            }
+            .save {
+                background: #2db84c;
+                border-color: #2db84c;
+                color: white;
+            }
+            .msg {
+                margin-top: 10px;
+                color: #137b2c;
+            }
+            .req {
+                color: #c00;
+            }
+            .hint {
+                margin-top: 10px;
+                color: #666;
+                font-size: 13px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <h2>Add Organization Unit</h2>
+
+            <div class="msg" th:if="${msg}" th:text="${msg}"></div>
+
+            <form th:object="${orgUnit}" method="post">
+                <label>Unit Id</label>
+                <input type="text" th:field="*{unitId}" />
+                <div
+                    class="err"
+                    th:if="${#fields.hasErrors('unitId')}"
+                    th:errors="*{unitId}"
+                ></div>
+
+                <label>Name<span class="req">*</span></label>
+                <input type="text" th:field="*{name}" />
+                <div
+                    class="err"
+                    th:if="${#fields.hasErrors('name')}"
+                    th:errors="*{name}"
+                ></div>
+
+                <label>Description</label>
+                <textarea
+                    rows="5"
+                    th:field="*{description}"
+                    placeholder="Type description here"
+                ></textarea>
+
+                <div class="hint">
+                    This unit will be added under <b>Organization</b>
+                </div>
+                <div class="hint"><span class="req">*</span> Required</div>
+
+                <div class="row">
+                    <button type="submit" formaction="/org-unit/cancel">
+                        Cancel
+                    </button>
+                    <button
+                        class="save"
+                        type="submit"
+                        formaction="/org-unit/save"
+                    >
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

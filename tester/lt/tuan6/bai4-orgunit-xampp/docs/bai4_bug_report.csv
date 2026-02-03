@@ -1,0 +1,2 @@
+Bug_ID,Related_TC,Summary,Severity,Priority,Environment,Steps,Expected,Actual,Status
+B4_BUG01,B4_TC09,Không validate độ dài Description,Medium,P2,XAMPP MySQL,"Nhập Description 2000 ký tự rồi Save","Báo lỗi/không cho lưu","Vẫn lưu vào DB",Open
