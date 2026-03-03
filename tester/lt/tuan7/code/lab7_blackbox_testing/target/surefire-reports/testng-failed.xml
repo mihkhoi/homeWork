@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Lab7 Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="All Tests(failed)" verbose="0">
+    <classes>
+      <class name="dtm.tests.TC_DangNhapTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="kiemThuDangNhap"/>
+        </methods>
+      </class> <!-- dtm.tests.TC_DangNhapTest -->
+      <class name="dtm.tests.TC_CheckoutTest">
+        <methods>
+          <include name="checkoutThanhCongSangStep2"/>
+          <include name="loginVaCo1ItemTrongGio"/>
+          <include name="tearDown"/>
+          <include name="checkoutFirstNameTrong"/>
+          <include name="setUp"/>
+          <include name="checkoutFinish"/>
+        </methods>
+      </class> <!-- dtm.tests.TC_CheckoutTest -->
+      <class name="dtm.tests.TC_TotalTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="kiemTraTinhToanTongTien"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- dtm.tests.TC_TotalTest -->
+      <class name="dtm.tests.TC_GioHangTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="them1SanPham"/>
+          <include name="setUp"/>
+          <include name="them3SanPham"/>
+          <include name="xoaHetSanPham"/>
+          <include name="dangNhap"/>
+          <include name="sortGiaTangDan"/>
+        </methods>
+      </class> <!-- dtm.tests.TC_GioHangTest -->
+    </classes>
+  </test> <!-- All Tests(failed) -->
+</suite> <!-- Failed suite [Lab7 Suite] -->

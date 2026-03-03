@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>State Diagram - BookRoom</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+  </head>
+  <body>
+    <h2>Sơ đồ trạng thái hệ thống đặt phòng BookRoom</h2>
+
+    <div class="mermaid">
+      stateDiagram-v2 S0: KHỞI_TẠO S1: CHỜ_THANH_TOÁN S2: ĐÃ_THANH_TOÁN S3:
+      ĐÃ_XÁC_NHẬN S4: ĐANG_LƯU_TRÚ S5: HOÀN_THÀNH S6: ĐÃ_HỦY S7: CHỜ_HOÀN_TIỀN
+      S8: ĐÃ_HOÀN_TIỀN S9: HẾT_HẠN S0 --> S1 : T01 Xác nhận đặt phòng S1 --> S2
+      : T02 Thanh toán thành công S1 --> S9 : T03 Timeout 30 phút S1 --> S6 :
+      T04 Hủy trước thanh toán S2 --> S3 : T05 KS xác nhận S2 --> S6 : T06 KS từ
+      chối S3 --> S4 : T07 Check-in S3 --> S6 : T08 Hủy trước hạn S3 --> S7 :
+      T09 Hủy sau hạn S4 --> S5 : T10 Check-out S6 --> S7 : T11 Yêu cầu hoàn
+      tiền S7 --> S8 : T12 Hoàn tiền thành công
+    </div>
+  </body>
+</html>

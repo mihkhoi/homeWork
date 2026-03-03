@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ShopVN.vn - Đăng ký tài khoản</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fb;
+        margin: 0;
+        padding: 24px;
+      }
+      .card {
+        max-width: 860px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+      }
+      .header {
+        background: #2e6fae;
+        color: #fff;
+        padding: 18px 22px;
+        font-weight: 700;
+      }
+      .content {
+        padding: 18px 22px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      td {
+        padding: 10px 8px;
+        vertical-align: top;
+        border-top: 1px solid #e9eef6;
+      }
+      td.label {
+        width: 240px;
+        font-weight: 600;
+      }
+      .req {
+        color: #d11;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="date"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #cfd8e6;
+        border-radius: 8px;
+        outline: none;
+      }
+      input:invalid {
+        border-color: #e4a2a2;
+      }
+      input:focus {
+        border-color: #2e6fae;
+      }
+      .hint {
+        font-size: 12px;
+        color: #5b677a;
+        margin-top: 6px;
+      }
+      .error {
+        font-size: 12px;
+        color: #c01818;
+        margin-top: 6px;
+        display: none;
+      }
+      .row {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .btns {
+        display: flex;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      button {
+        padding: 10px 14px;
+        border: 0;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 700;
+      }
+      button.primary {
+        background: #2e6fae;
+        color: #fff;
+      }
+      button.primary:disabled {
+        background: #9fb7d3;
+        cursor: not-allowed;
+      }
+      button.secondary {
+        background: #eef3fb;
+        color: #2e6fae;
+      }
+      a {
+        color: #2e6fae;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .toast {
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: #f0fff4;
+        border: 1px solid #b7f0c2;
+        color: #155724;
+        display: none;
+        margin-top: 12px;
+      }
+      dialog {
+        border: 0;
+        border-radius: 12px;
+        padding: 0;
+        width: min(720px, 92vw);
+      }
+      dialog::backdrop {
+        background: rgba(0, 0, 0, 0.45);
+      }
+      .modal-head {
+        background: #2e6fae;
+        color: #fff;
+        padding: 14px 16px;
+        font-weight: 700;
+      }
+      .modal-body {
+        padding: 14px 16px;
+        line-height: 1.5;
+      }
+      .modal-foot {
+        padding: 12px 16px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        border-top: 1px solid #e9eef6;
+      }
+      .note {
+        background: #fff6d8;
+        border: 1px solid #f0d48a;
+        padding: 10px 12px;
+        border-radius: 10px;
+        margin-top: 12px;
+        color: #6a4b00;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <div class="header">Form Đăng Ký Tài Khoản – ShopVN.vn</div>
+      <div class="content">
+        <form id="registerForm" novalidate>
+          <table>
+            <tr>
+              <td class="label">Họ và tên <span class="req">(*)</span></td>
+              <td>
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  required
+                  minlength="2"
+                  maxlength="50"
+                  pattern="^[A-Za-zÀ-ỹ]+(?:[ ]+[A-Za-zÀ-ỹ]+)*$"
+                  placeholder="VD: Nguyen Van A"
+                />
+                <div class="hint">
+                  Chỉ chữ cái (có dấu/không dấu) và dấu cách, 2–50 ký tự.
+                </div>
+                <div class="error" id="errFullName">Họ tên không hợp lệ.</div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="label">Tên đăng nhập <span class="req">(*)</span></td>
+              <td>
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  required
+                  minlength="5"
+                  maxlength="20"
+                  pattern="^[a-z][a-z0-9_]{4,19}$"
+                  placeholder="VD: abcde_1"
+                />
+                <div class="hint">
+                  Chữ thường/số/_; bắt đầu bằng chữ; dài 5–20. (Unique sẽ kiểm
+                  tra server-side)
+                </div>
+                <div class="error" id="errUsername">
+                  Tên đăng nhập không hợp lệ.
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="label">Email <span class="req">(*)</span></td>
+              <td>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="VD: a.nguyen@gmail.com"
+                />
+                <div class="hint">
+                  Đúng định dạng email. (Duplicate sẽ kiểm tra server-side)
+                </div>
+                <div class="error" id="errEmail">Email không hợp lệ.</div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="label">Số điện thoại <span class="req">(*)</span></td>
+              <td>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="text"
+                  required
+                  inputmode="numeric"
+                  pattern="^0\d{9}$"
+                  placeholder="VD: 0987654321"
+                />
+                <div class="hint">
+                  Bắt đầu bằng 0, đúng 10 chữ số liên tiếp.
+                </div>
+                <div class="error" id="errPhone">
+                  Số điện thoại không hợp lệ.
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="label">Mật khẩu <span class="req">(*)</span></td>
+              <td>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  required
+                  minlength="8"
+                  maxlength="32"
+                  placeholder="Nhập mật khẩu"
+                />
+                <div class="hint">
+                  8–32 ký tự, có ít nhất 1 hoa, 1 thường, 1 số, 1 ký tự đặc
+                  biệt.
+                </div>
+                <div class="error" id="errPassword">Mật khẩu không hợp lệ.</div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="label">
+                Xác nhận mật khẩu <span class="req">(*)</span>
+              </td>
+              <td>
+                <input
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  type="password"
+                  required
+                  placeholder="Nhập lại mật khẩu"
+                />
+                <div class="hint">Phải trùng khớp hoàn toàn với Mật khẩu.</div>
+                <div class="error" id="errConfirm">
+                  Xác nhận mật khẩu không khớp.
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="label">Ngày sinh</td>
+              <td>
+                <input id="dob" name="dob" type="date" />
+                <div class="hint">Không bắt buộc. Tuổi từ 16 đến dưới 100.</div>
+                <div class="error" id="errDob">
+                  Ngày sinh không hợp lệ (tuổi phải 16 đến &lt;100).
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="label">Giới tính</td>
+              <td>
+                <div class="row">
+                  <label
+                    ><input type="radio" name="gender" value="Nam" /> Nam</label
+                  >
+                  <label
+                    ><input type="radio" name="gender" value="Nu" /> Nữ</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="gender"
+                      value="KhongMuonTietLo"
+                    />
+                    Không muốn tiết lộ</label
+                  >
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="label">Mã giới thiệu</td>
+              <td>
+                <input
+                  id="referral"
+                  name="referral"
+                  type="text"
+                  pattern="^[A-Z0-9]{8}$"
+                  placeholder="VD: AB12CD34 (nếu có)"
+                />
+                <div class="hint">
+                  Không bắt buộc. 8 ký tự chữ HOA và số (tồn tại CSDL sẽ kiểm
+                  tra server-side).
+                </div>
+                <div class="error" id="errReferral">
+                  Mã giới thiệu sai định dạng (phải 8 ký tự HOA + số).
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="label">
+                Đồng ý Điều khoản <span class="req">(*)</span>
+              </td>
+              <td>
+                <div class="row" style="align-items: flex-start">
+                  <label style="display: flex; gap: 10px; align-items: center">
+                    <input id="terms" type="checkbox" required />
+                    <span>Tôi đồng ý với Điều khoản sử dụng</span>
+                  </label>
+                  <a href="#" id="viewTerms">Xem Điều khoản</a>
+                </div>
+                <div class="error" id="errTerms">
+                  Bạn cần tích “Đồng ý Điều khoản”.
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="label">Nút [Đăng ký]</td>
+              <td>
+                <div class="btns">
+                  <button
+                    id="btnRegister"
+                    class="primary"
+                    type="submit"
+                    disabled
+                  >
+                    Đăng ký
+                  </button>
+                  <button
+                    class="secondary"
+                    type="button"
+                    onclick="alert('Đi tới trang Đăng nhập (demo)')"
+                  >
+                    Đăng nhập
+                  </button>
+                </div>
+                <div class="note">
+                  Ghi chú: Đây là demo client-side. Duplicate email/username và
+                  referral tồn tại CSDL thường là server-side sau khi submit.
+                </div>
+                <div class="toast" id="successToast">
+                  ✅ Đăng ký thành công (demo). Bạn có thể chụp màn hình phần
+                  này để đưa vào Word.
+                </div>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+
+    <dialog id="termsDialog">
+      <div class="modal-head">Điều khoản sử dụng – ShopVN.vn</div>
+      <div class="modal-body">
+        <p><b>1)</b> Người dùng chịu trách nhiệm về thông tin đăng ký.</p>
+        <p><b>2)</b> Không sử dụng hệ thống cho mục đích vi phạm pháp luật.</p>
+        <p><b>3)</b> ShopVN có thể cập nhật điều khoản theo thời gian.</p>
+        <p>(Nội dung demo để đáp ứng yêu cầu “Xem Điều khoản” mở popup.)</p>
+      </div>
+      <div class="modal-foot">
+        <button class="secondary" id="closeTerms" type="button">Đóng</button>
+      </div>
+    </dialog>
+
+    <script>
+      // --- Helpers ---
+      const $ = (id) => document.getElementById(id);
+
+      const fullName = $("fullName");
+      const username = $("username");
+      const email = $("email");
+      const phone = $("phone");
+      const password = $("password");
+      const confirmPassword = $("confirmPassword");
+      const dob = $("dob");
+      const referral = $("referral");
+      const terms = $("terms");
+      const btnRegister = $("btnRegister");
+
+      function passwordMeetsPolicy(pw) {
+        // 8–32 handled by minlength/maxlength; check groups:
+        const hasUpper = /[A-Z]/.test(pw);
+        const hasLower = /[a-z]/.test(pw);
+        const hasDigit = /\d/.test(pw);
+        const hasSpecial = /[^A-Za-z0-9]/.test(pw);
+        return hasUpper && hasLower && hasDigit && hasSpecial;
+      }
+
+      function getAgeYears(dateObj) {
+        const today = new Date();
+        let age = today.getFullYear() - dateObj.getFullYear();
+        const m = today.getMonth() - dateObj.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < dateObj.getDate())) age--;
+        return age;
+      }
+
+      function showError(id, show) {
+        const el = $(id);
+        el.style.display = show ? "block" : "none";
+      }
+
+      function validateAll(showErrors = false) {
+        // HTML constraint checks
+        const okFullName = fullName.checkValidity();
+        const okUsername = username.checkValidity();
+        const okEmail = email.checkValidity();
+        const okPhone = phone.checkValidity();
+        const okReferral =
+          referral.value.trim() === "" ? true : referral.checkValidity();
+
+        // Password policy
+        const pw = password.value || "";
+        const okPasswordLen = password.checkValidity(); // minlength/maxlength/required
+        const okPasswordPolicy = okPasswordLen && passwordMeetsPolicy(pw);
+
+        // Confirm match
+        const okConfirmRequired = confirmPassword.checkValidity();
+        const okConfirmMatch =
+          okConfirmRequired && confirmPassword.value === password.value;
+
+        // DOB (optional)
+        let okDob = true;
+        if (dob.value) {
+          const d = new Date(dob.value + "T00:00:00");
+          const age = getAgeYears(d);
+          okDob = age >= 16 && age < 100;
+        }
+
+        // Terms
+        const okTerms = terms.checked;
+
+        if (showErrors) {
+          showError("errFullName", !okFullName);
+          showError("errUsername", !okUsername);
+          showError("errEmail", !okEmail);
+          showError("errPhone", !okPhone);
+          showError("errReferral", !okReferral);
+
+          showError("errPassword", !okPasswordPolicy);
+          showError("errConfirm", !okConfirmMatch);
+          showError("errDob", !okDob);
+          showError("errTerms", !okTerms);
+        } else {
+          // hide while typing (optional)
+        }
+
+        const allRequiredPresent =
+          fullName.value.trim() !== "" &&
+          username.value.trim() !== "" &&
+          email.value.trim() !== "" &&
+          phone.value.trim() !== "" &&
+          password.value !== "" &&
+          confirmPassword.value !== "" &&
+          okTerms;
+
+        const ok =
+          okFullName &&
+          okUsername &&
+          okEmail &&
+          okPhone &&
+          okReferral &&
+          okPasswordPolicy &&
+          okConfirmMatch &&
+          okDob &&
+          okTerms;
+
+        btnRegister.disabled = !(allRequiredPresent && ok);
+        return ok;
+      }
+
+      // Validate on input/change
+      ["input", "change"].forEach((evt) => {
+        document.addEventListener(evt, (e) => {
+          if (e.target.closest("#registerForm")) {
+            validateAll(false);
+          }
+        });
+      });
+
+      // Submit handler
+      $("registerForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const ok = validateAll(true);
+        if (!ok) return;
+
+        // Demo success
+        $("successToast").style.display = "block";
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      });
+
+      // Terms popup
+      const dialog = $("termsDialog");
+      $("viewTerms").addEventListener("click", (e) => {
+        e.preventDefault();
+        dialog.showModal();
+      });
+      $("closeTerms").addEventListener("click", () => dialog.close());
+
+      // initial state
+      validateAll(false);
+    </script>
+  </body>
+</html>
