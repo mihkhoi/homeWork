@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PhoneValidator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">bai6-1-tdd-phonevalidator</a> &gt; <a href="index.source.html" class="el_package">lab8.bai61</a> &gt; <span class="el_source">PhoneValidator.java</span></div><h1>PhoneValidator.java</h1><pre class="source lang-java linenums">package lab8.bai61;
+
+public
+<span class="nc" id="L4">class PhoneValidator {</span>
+
+  public
+    static boolean isValid(String phone) {
+<span class="fc bfc" id="L8" title="All 2 branches covered.">        if (phone == null) {</span>
+<span class="fc" id="L9">            return false;</span>
+        }
+
+<span class="fc" id="L12">        String trimmed = phone.trim();</span>
+<span class="fc bfc" id="L13" title="All 2 branches covered.">        if (trimmed.isEmpty()) {</span>
+<span class="fc" id="L14">            return false;</span>
+        }
+
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        for (int i = 0; i &lt; trimmed.length(); i++) {</span>
+<span class="fc" id="L18">            char ch = trimmed.charAt(i);</span>
+<span class="fc" id="L19">            boolean isDigit = Character.isDigit(ch);</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">            boolean isPlus = ch == '+';</span>
+<span class="fc" id="L21">            boolean isSpace = Character.isWhitespace(ch);</span>
+
+<span class="fc bfc" id="L23" title="All 6 branches covered.">            if (!isDigit &amp;&amp; !isPlus &amp;&amp; !isSpace) {</span>
+<span class="fc" id="L24">                return false;</span>
+            }
+        }
+
+<span class="fc" id="L28">        String normalized = trimmed.replaceAll(&quot;\\s+&quot;, &quot;&quot;);</span>
+
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (normalized.startsWith(&quot;+84&quot;)) {</span>
+<span class="fc" id="L31">            normalized = &quot;0&quot; + normalized.substring(3);</span>
+        }
+
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">        if (!normalized.startsWith(&quot;0&quot;)) {</span>
+<span class="nc" id="L35">            return false;</span>
+        }
+
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">        if (!normalized.matches(&quot;\\d+&quot;)) {</span>
+<span class="nc" id="L39">            return false;</span>
+        }
+
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        if (normalized.length() != 10) {</span>
+<span class="fc" id="L43">            return false;</span>
+        }
+
+<span class="fc" id="L46">        return normalized.matches(&quot;0(3|5|7|8|9)\\d{8}&quot;);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>TestNG:  Condition and MCDC Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Condition and MCDC Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>7/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Mar 10 15:06:01 GMT+07:00 2026</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (22 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='lab8.bai5.VayVonConditionCoverageTest.testConditionCoverage_AllFalse()'><b>testConditionCoverage_AllFalse</b><br>Test class: lab8.bai5.VayVonConditionCoverageTest<br>Test method: Condition Coverage - Tat ca dieu kien don deu False</td>
+<td></td>
+<td>0</td>
+<td>lab8.bai5.VayVonConditionCoverageTest@4ae3c1cd</td></tr>
+<tr>
+<td title='lab8.bai5.VayVonMCDCTest.testMCDC_DiemTinDungDocLap_Duoi700()'><b>testMCDC_DiemTinDungDocLap_Duoi700</b><br>Test class: lab8.bai5.VayVonMCDCTest<br>Test method: MC/DC - Chung minh diem tin dung anh huong doc lap: khong co tai san, diem tin dung < 700</td>
+<td></td>
+<td>0</td>
+<td>lab8.bai5.VayVonMCDCTest@8e0379d</td></tr>
+<tr>
+<td title='lab8.bai5.VayVonMCDCTest.testMCDC_BaseCase_DuocVay()'><b>testMCDC_BaseCase_DuocVay</b><br>Test class: lab8.bai5.VayVonMCDCTest<br>Test method: MC/DC - Base case: du dieu kien co ban, khong co tai san nhung diem tin dung >= 700</td>
+<td></td>
+<td>0</td>
+<td>lab8.bai5.VayVonMCDCTest@8e0379d</td></tr>
+<tr>
+<td title='lab8.bai5.VayVonMCDCTest.testMCDC_TaiSanBaoLanhDocLap_CoTaiSan()'><b>testMCDC_TaiSanBaoLanhDocLap_CoTaiSan</b><br>Test class: lab8.bai5.VayVonMCDCTest<br>Test method: MC/DC - Chung minh tai san bao lanh anh huong doc lap: co tai san, diem tin dung < 700</td>
+<td></td>
+<td>0</td>
+<td>lab8.bai5.VayVonMCDCTest@8e0379d</td></tr>
+<tr>
+<td title='lab8.bai5.VayVonMCDCTest.testMCDC_ThuNhapDocLap_ThapHon10Tr()'><b>testMCDC_ThuNhapDocLap_ThapHon10Tr</b><br>Test class: lab8.bai5.VayVonMCDCTest<br>Test method: MC/DC - Chung minh thu nhap anh huong doc lap: thu nhap < 10 trieu</td>
+<td></td>
+<td>0</td>
+<td>lab8.bai5.VayVonMCDCTest@8e0379d</td></tr>
+<tr>
+<td title='lab8.bai5.VayVonMCDCTest.testMCDC_TuoiDocLap_ThapHon22()'><b>testMCDC_TuoiDocLap_ThapHon22</b><br>Test class: lab8.bai5.VayVonMCDCTest<br>Test method: MC/DC - Chung minh tuoi anh huong doc lap: tuoi < 22</td>
+<td></td>
+<td>0</td>
+<td>lab8.bai5.VayVonMCDCTest@8e0379d</td></tr>
+<tr>
+<td title='lab8.bai5.VayVonConditionCoverageTest.testConditionCoverage_AllTrue()'><b>testConditionCoverage_AllTrue</b><br>Test class: lab8.bai5.VayVonConditionCoverageTest<br>Test method: Condition Coverage - Tat ca dieu kien don deu True</td>
+<td></td>
+<td>0</td>
+<td>lab8.bai5.VayVonConditionCoverageTest@4ae3c1cd</td></tr>
+</table><p>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lab8_Bai5_Condition_MCDC_Suite">
+    <test name="Condition and MCDC Tests">
+        <classes>
+            <class name="lab8.bai5.VayVonConditionCoverageTest"/>
+            <class name="lab8.bai5.VayVonMCDCTest"/>
+        </classes>
+    </test>
+</suite>

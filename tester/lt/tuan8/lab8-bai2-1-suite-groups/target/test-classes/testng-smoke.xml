@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lab8_Bai21_Smoke_Suite" verbose="1">
+    <groups>
+        <run>
+            <include name="smoke"/>
+        </run>
+    </groups>
+
+    <test name="Smoke Tests">
+        <classes>
+            <class name="lab8.bai21.LoginTest"/>
+            <class name="lab8.bai21.CartTest"/>
+            <class name="lab8.bai21.CheckoutTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" class="navigator-link">
+              <span class="suite-name border-passed">Lab8_Bai7_OrderProcessor_Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Lab8_Bai7_OrderProcessor_Suite" class="navigator-link ">
+                    <span>D:\Code\github\homeWork\tester\lt\tuan8\lab8-bai7-orderprocessor-allure-jacoco\src\test\resources\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Lab8_Bai7_OrderProcessor_Suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Lab8_Bai7_OrderProcessor_Suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Lab8_Bai7_OrderProcessor_Suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Lab8_Bai7_OrderProcessor_Suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Lab8_Bai7_OrderProcessor_Suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Lab8_Bai7_OrderProcessor_Suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">14 methods,   14 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" class="hide-methods passed suite-Lab8_Bai7_OrderProcessor_Suite"> (hide)</a> <!-- hide-methods passed suite-Lab8_Bai7_OrderProcessor_Suite -->
+                      <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" class="show-methods passed suite-Lab8_Bai7_OrderProcessor_Suite"> (show)</a> <!-- show-methods passed suite-Lab8_Bai7_OrderProcessor_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Lab8_Bai7_OrderProcessor_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testBasisPath_P1_NullItems">testBasisPath_P1_NullItems</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testBasisPath_P2_NoCoupon_NoMember_NoShipping">testBasisPath_P2_NoCoupon_NoMember_NoShipping</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testBasisPath_P3_NoCoupon_OnlineShipping">testBasisPath_P3_NoCoupon_OnlineShipping</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testBasisPath_P4_NoCoupon_CODShipping">testBasisPath_P4_NoCoupon_CODShipping</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testBasisPath_P5_GoldMember_COD">testBasisPath_P5_GoldMember_COD</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testBasisPath_P6_PlatinumMember_Online">testBasisPath_P6_PlatinumMember_Online</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testBasisPath_P7_CouponSale10">testBasisPath_P7_CouponSale10</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testBasisPath_P8_CouponSale20_Gold_COD">testBasisPath_P8_CouponSale20_Gold_COD</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testBasisPath_P9_InvalidCoupon">testBasisPath_P9_InvalidCoupon</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testCoverageBoost_EmptyList">testCoverageBoost_EmptyList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testMCDC_Coupon_A_NullCoupon">testMCDC_Coupon_A_NullCoupon</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testMCDC_Coupon_B_EmptyCoupon">testMCDC_Coupon_B_EmptyCoupon</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testMCDC_Coupon_D3_Sale10">testMCDC_Coupon_D3_Sale10</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" title="lab8.bai7.OrderProcessorTest" class="method navigator-link" hash-for-method="testMCDC_Coupon_D4_Sale20">testMCDC_Coupon_D4_Sale20</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Lab8_Bai7_OrderProcessor_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Lab8_Bai7_OrderProcessor_Suite" class="panel Lab8_Bai7_OrderProcessor_Suite">
+          <div class="suite-Lab8_Bai7_OrderProcessor_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">lab8.bai7.OrderProcessorTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBasisPath_P1_NullItems">
+                  </a> <!-- testBasisPath_P1_NullItems -->
+                  <span class="method-name">testBasisPath_P1_NullItems</span>
+                  <em>
+(Basis Path P1 - gio hang null)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBasisPath_P2_NoCoupon_NoMember_NoShipping">
+                  </a> <!-- testBasisPath_P2_NoCoupon_NoMember_NoShipping -->
+                  <span class="method-name">testBasisPath_P2_NoCoupon_NoMember_NoShipping</span>
+                  <em>
+(Basis Path P2 - khong coupon, khong member, tong >= 500000)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBasisPath_P3_NoCoupon_OnlineShipping">
+                  </a> <!-- testBasisPath_P3_NoCoupon_OnlineShipping -->
+                  <span class="method-name">testBasisPath_P3_NoCoupon_OnlineShipping</span>
+                  <em>
+(Basis Path P3 - khong coupon, khong member, tong < 500000, online)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBasisPath_P4_NoCoupon_CODShipping">
+                  </a> <!-- testBasisPath_P4_NoCoupon_CODShipping -->
+                  <span class="method-name">testBasisPath_P4_NoCoupon_CODShipping</span>
+                  <em>
+(Basis Path P4 - khong coupon, khong member, tong < 500000, COD)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBasisPath_P5_GoldMember_COD">
+                  </a> <!-- testBasisPath_P5_GoldMember_COD -->
+                  <span class="method-name">testBasisPath_P5_GoldMember_COD</span>
+                  <em>
+(Basis Path P5 - khong coupon, GOLD, COD)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBasisPath_P6_PlatinumMember_Online">
+                  </a> <!-- testBasisPath_P6_PlatinumMember_Online -->
+                  <span class="method-name">testBasisPath_P6_PlatinumMember_Online</span>
+                  <em>
+(Basis Path P6 - khong coupon, PLATINUM, online)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBasisPath_P7_CouponSale10">
+                  </a> <!-- testBasisPath_P7_CouponSale10 -->
+                  <span class="method-name">testBasisPath_P7_CouponSale10</span>
+                  <em>
+(Basis Path P7 - coupon SALE10, online)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBasisPath_P8_CouponSale20_Gold_COD">
+                  </a> <!-- testBasisPath_P8_CouponSale20_Gold_COD -->
+                  <span class="method-name">testBasisPath_P8_CouponSale20_Gold_COD</span>
+                  <em>
+(Basis Path P8 - coupon SALE20, GOLD, COD)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBasisPath_P9_InvalidCoupon">
+                  </a> <!-- testBasisPath_P9_InvalidCoupon -->
+                  <span class="method-name">testBasisPath_P9_InvalidCoupon</span>
+                  <em>
+(Basis Path P9 - coupon khong hop le)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCoverageBoost_EmptyList">
+                  </a> <!-- testCoverageBoost_EmptyList -->
+                  <span class="method-name">testCoverageBoost_EmptyList</span>
+                  <em>
+(Coverage booster - D1 second operand true: items empty)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMCDC_Coupon_A_NullCoupon">
+                  </a> <!-- testMCDC_Coupon_A_NullCoupon -->
+                  <span class="method-name">testMCDC_Coupon_A_NullCoupon</span>
+                  <em>
+(MC/DC coupon - A=False: couponCode = null)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMCDC_Coupon_B_EmptyCoupon">
+                  </a> <!-- testMCDC_Coupon_B_EmptyCoupon -->
+                  <span class="method-name">testMCDC_Coupon_B_EmptyCoupon</span>
+                  <em>
+(MC/DC coupon - B=False: couponCode rong)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMCDC_Coupon_D3_Sale10">
+                  </a> <!-- testMCDC_Coupon_D3_Sale10 -->
+                  <span class="method-name">testMCDC_Coupon_D3_Sale10</span>
+                  <em>
+(MC/DC coupon - D3=True: coupon SALE10)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testMCDC_Coupon_D4_Sale20">
+                  </a> <!-- testMCDC_Coupon_D4_Sale20 -->
+                  <span class="method-name">testMCDC_Coupon_D4_Sale20</span>
+                  <em>
+(MC/DC coupon - D3=False, D4=True: coupon SALE20)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Lab8_Bai7_OrderProcessor_Suite-class-passed -->
+        </div> <!-- panel Lab8_Bai7_OrderProcessor_Suite -->
+        <div panel-name="test-xml-Lab8_Bai7_OrderProcessor_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">D:\Code\github\homeWork\tester\lt\tuan8\lab8-bai7-orderprocessor-allure-jacoco\src\test\resources\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Lab8_Bai7_OrderProcessor_Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;OrderProcessor Allure JaCoCo Tests&quot; verbose=&quot;0&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;lab8.bai7.OrderProcessorTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- OrderProcessor Allure JaCoCo Tests --&gt;
+&lt;/suite&gt; &lt;!-- Lab8_Bai7_OrderProcessor_Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Lab8_Bai7_OrderProcessor_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Lab8_Bai7_OrderProcessor_Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">OrderProcessor Allure JaCoCo Tests (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Lab8_Bai7_OrderProcessor_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Lab8_Bai7_OrderProcessor_Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Lab8_Bai7_OrderProcessor_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Lab8_Bai7_OrderProcessor_Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Lab8_Bai7_OrderProcessor_Suite');
+function tableData_Lab8_Bai7_OrderProcessor_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(14);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testBasisPath_P1_NullItems')
+data.setCell(0, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(0, 3, 32);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testBasisPath_P2_NoCoupon_NoMember_NoShipping')
+data.setCell(1, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(1, 3, 5);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testBasisPath_P3_NoCoupon_OnlineShipping')
+data.setCell(2, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(2, 3, 3);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testBasisPath_P9_InvalidCoupon')
+data.setCell(3, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(3, 3, 2);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testBasisPath_P6_PlatinumMember_Online')
+data.setCell(4, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(4, 3, 2);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testCoverageBoost_EmptyList')
+data.setCell(5, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(5, 3, 2);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testBasisPath_P4_NoCoupon_CODShipping')
+data.setCell(6, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(6, 3, 2);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testBasisPath_P7_CouponSale10')
+data.setCell(7, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(7, 3, 2);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testBasisPath_P8_CouponSale20_Gold_COD')
+data.setCell(8, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(8, 3, 1);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testMCDC_Coupon_D3_Sale10')
+data.setCell(9, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(9, 3, 1);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testMCDC_Coupon_A_NullCoupon')
+data.setCell(10, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(10, 3, 1);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'testBasisPath_P5_GoldMember_COD')
+data.setCell(11, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(11, 3, 1);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testMCDC_Coupon_B_EmptyCoupon')
+data.setCell(12, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(12, 3, 1);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testMCDC_Coupon_D4_Sale20')
+data.setCell(13, 2, 'lab8.bai7.OrderProcessorTest')
+data.setCell(13, 3, 1);
+window.suiteTableData['Lab8_Bai7_OrderProcessor_Suite']= { tableData: data, tableDiv: 'times-div-Lab8_Bai7_OrderProcessor_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 56 ms</span>
+              <div id="times-div-Lab8_Bai7_OrderProcessor_Suite">
+              </div> <!-- times-div-Lab8_Bai7_OrderProcessor_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Lab8_Bai7_OrderProcessor_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Lab8_Bai7_OrderProcessor_Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Lab8_Bai7_OrderProcessor_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Lab8_Bai7_OrderProcessor_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">lab8.bai7.OrderProcessorTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testBasisPath_P1_NullItems</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBasisPath_P2_NoCoupon_NoMember_NoShipping</span>
+                <span class="method-start">78 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBasisPath_P3_NoCoupon_OnlineShipping</span>
+                <span class="method-start">86 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBasisPath_P4_NoCoupon_CODShipping</span>
+                <span class="method-start">90 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBasisPath_P5_GoldMember_COD</span>
+                <span class="method-start">95 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBasisPath_P6_PlatinumMember_Online</span>
+                <span class="method-start">97 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBasisPath_P7_CouponSale10</span>
+                <span class="method-start">99 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBasisPath_P8_CouponSale20_Gold_COD</span>
+                <span class="method-start">102 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testBasisPath_P9_InvalidCoupon</span>
+                <span class="method-start">104 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCoverageBoost_EmptyList</span>
+                <span class="method-start">107 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testMCDC_Coupon_A_NullCoupon</span>
+                <span class="method-start">111 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testMCDC_Coupon_B_EmptyCoupon</span>
+                <span class="method-start">113 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testMCDC_Coupon_D3_Sale10</span>
+                <span class="method-start">115 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testMCDC_Coupon_D4_Sale20</span>
+                <span class="method-start">117 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

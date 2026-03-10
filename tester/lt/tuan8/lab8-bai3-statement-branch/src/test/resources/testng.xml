@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lab8_Bai3_Statement_Branch_Suite">
+    <test name="Branch Coverage Tests">
+        <classes>
+            <class name="lab8.bai3.XepLoaiBranchCoverageTest"/>
+            <class name="lab8.bai3.TinhTienNuocBranchCoverageTest"/>
+        </classes>
+    </test>
+</suite>

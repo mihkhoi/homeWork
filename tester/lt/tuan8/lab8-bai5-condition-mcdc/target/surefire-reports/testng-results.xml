@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-10T15:06:01 GMT+07:00" name="Lab8_Bai5_Condition_MCDC_Suite" finished-at="2026-03-10T15:06:01 GMT+07:00" duration-ms="22">
+    <groups>
+    </groups>
+    <test started-at="2026-03-10T15:06:01 GMT+07:00" name="Condition and MCDC Tests" finished-at="2026-03-10T15:06:01 GMT+07:00" duration-ms="22">
+      <class name="lab8.bai5.VayVonConditionCoverageTest">
+        <test-method signature="testConditionCoverage_AllFalse()[pri:0, instance:lab8.bai5.VayVonConditionCoverageTest@4ae3c1cd]" started-at="2026-03-10T15:06:01 GMT+07:00" name="testConditionCoverage_AllFalse" description="Condition Coverage - Tat ca dieu kien don deu False" finished-at="2026-03-10T15:06:01 GMT+07:00" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testConditionCoverage_AllFalse -->
+        <test-method signature="testConditionCoverage_AllTrue()[pri:0, instance:lab8.bai5.VayVonConditionCoverageTest@4ae3c1cd]" started-at="2026-03-10T15:06:01 GMT+07:00" name="testConditionCoverage_AllTrue" description="Condition Coverage - Tat ca dieu kien don deu True" finished-at="2026-03-10T15:06:01 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testConditionCoverage_AllTrue -->
+      </class> <!-- lab8.bai5.VayVonConditionCoverageTest -->
+      <class name="lab8.bai5.VayVonMCDCTest">
+        <test-method signature="testMCDC_DiemTinDungDocLap_Duoi700()[pri:0, instance:lab8.bai5.VayVonMCDCTest@8e0379d]" started-at="2026-03-10T15:06:01 GMT+07:00" name="testMCDC_DiemTinDungDocLap_Duoi700" description="MC/DC - Chung minh diem tin dung anh huong doc lap: khong co tai san, diem tin dung &lt; 700" finished-at="2026-03-10T15:06:01 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMCDC_DiemTinDungDocLap_Duoi700 -->
+        <test-method signature="testMCDC_BaseCase_DuocVay()[pri:0, instance:lab8.bai5.VayVonMCDCTest@8e0379d]" started-at="2026-03-10T15:06:01 GMT+07:00" name="testMCDC_BaseCase_DuocVay" description="MC/DC - Base case: du dieu kien co ban, khong co tai san nhung diem tin dung &gt;= 700" finished-at="2026-03-10T15:06:01 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMCDC_BaseCase_DuocVay -->
+        <test-method signature="testMCDC_TaiSanBaoLanhDocLap_CoTaiSan()[pri:0, instance:lab8.bai5.VayVonMCDCTest@8e0379d]" started-at="2026-03-10T15:06:01 GMT+07:00" name="testMCDC_TaiSanBaoLanhDocLap_CoTaiSan" description="MC/DC - Chung minh tai san bao lanh anh huong doc lap: co tai san, diem tin dung &lt; 700" finished-at="2026-03-10T15:06:01 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMCDC_TaiSanBaoLanhDocLap_CoTaiSan -->
+        <test-method signature="testMCDC_ThuNhapDocLap_ThapHon10Tr()[pri:0, instance:lab8.bai5.VayVonMCDCTest@8e0379d]" started-at="2026-03-10T15:06:01 GMT+07:00" name="testMCDC_ThuNhapDocLap_ThapHon10Tr" description="MC/DC - Chung minh thu nhap anh huong doc lap: thu nhap &lt; 10 trieu" finished-at="2026-03-10T15:06:01 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMCDC_ThuNhapDocLap_ThapHon10Tr -->
+        <test-method signature="testMCDC_TuoiDocLap_ThapHon22()[pri:0, instance:lab8.bai5.VayVonMCDCTest@8e0379d]" started-at="2026-03-10T15:06:01 GMT+07:00" name="testMCDC_TuoiDocLap_ThapHon22" description="MC/DC - Chung minh tuoi anh huong doc lap: tuoi &lt; 22" finished-at="2026-03-10T15:06:01 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMCDC_TuoiDocLap_ThapHon22 -->
+      </class> <!-- lab8.bai5.VayVonMCDCTest -->
+    </test> <!-- Condition and MCDC Tests -->
+  </suite> <!-- Lab8_Bai5_Condition_MCDC_Suite -->
+</testng-results>

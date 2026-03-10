@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lab8 Bai1 Suite">
+    <test name="Title and Login Tests">
+        <classes>
+            <class name="lab8.bai1.TitleTest"/>
+            <class name="lab8.bai1.LoginTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lab8_Bai7_OrderProcessor_Suite">
+    <test name="OrderProcessor Allure JaCoCo Tests">
+        <classes>
+            <class name="lab8.bai7.OrderProcessorTest"/>
+        </classes>
+    </test>
+</suite>

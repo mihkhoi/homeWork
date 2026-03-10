@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="14" passed="14" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-10T15:41:24 GMT+07:00" name="Lab8_Bai7_OrderProcessor_Suite" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="150">
+    <groups>
+    </groups>
+    <test started-at="2026-03-10T15:41:24 GMT+07:00" name="OrderProcessor Allure JaCoCo Tests" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="150">
+      <class name="lab8.bai7.OrderProcessorTest">
+        <test-method signature="testBasisPath_P1_NullItems()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testBasisPath_P1_NullItems" description="Basis Path P1 - gio hang null" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="32" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBasisPath_P1_NullItems -->
+        <test-method signature="testBasisPath_P2_NoCoupon_NoMember_NoShipping()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testBasisPath_P2_NoCoupon_NoMember_NoShipping" description="Basis Path P2 - khong coupon, khong member, tong &gt;= 500000" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBasisPath_P2_NoCoupon_NoMember_NoShipping -->
+        <test-method signature="testBasisPath_P3_NoCoupon_OnlineShipping()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testBasisPath_P3_NoCoupon_OnlineShipping" description="Basis Path P3 - khong coupon, khong member, tong &lt; 500000, online" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBasisPath_P3_NoCoupon_OnlineShipping -->
+        <test-method signature="testBasisPath_P4_NoCoupon_CODShipping()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testBasisPath_P4_NoCoupon_CODShipping" description="Basis Path P4 - khong coupon, khong member, tong &lt; 500000, COD" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBasisPath_P4_NoCoupon_CODShipping -->
+        <test-method signature="testBasisPath_P5_GoldMember_COD()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testBasisPath_P5_GoldMember_COD" description="Basis Path P5 - khong coupon, GOLD, COD" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBasisPath_P5_GoldMember_COD -->
+        <test-method signature="testBasisPath_P6_PlatinumMember_Online()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testBasisPath_P6_PlatinumMember_Online" description="Basis Path P6 - khong coupon, PLATINUM, online" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBasisPath_P6_PlatinumMember_Online -->
+        <test-method signature="testBasisPath_P7_CouponSale10()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testBasisPath_P7_CouponSale10" description="Basis Path P7 - coupon SALE10, online" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBasisPath_P7_CouponSale10 -->
+        <test-method signature="testBasisPath_P8_CouponSale20_Gold_COD()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testBasisPath_P8_CouponSale20_Gold_COD" description="Basis Path P8 - coupon SALE20, GOLD, COD" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBasisPath_P8_CouponSale20_Gold_COD -->
+        <test-method signature="testBasisPath_P9_InvalidCoupon()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testBasisPath_P9_InvalidCoupon" description="Basis Path P9 - coupon khong hop le" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBasisPath_P9_InvalidCoupon -->
+        <test-method signature="testCoverageBoost_EmptyList()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testCoverageBoost_EmptyList" description="Coverage booster - D1 second operand true: items empty" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCoverageBoost_EmptyList -->
+        <test-method signature="testMCDC_Coupon_A_NullCoupon()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testMCDC_Coupon_A_NullCoupon" description="MC/DC coupon - A=False: couponCode = null" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMCDC_Coupon_A_NullCoupon -->
+        <test-method signature="testMCDC_Coupon_B_EmptyCoupon()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testMCDC_Coupon_B_EmptyCoupon" description="MC/DC coupon - B=False: couponCode rong" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMCDC_Coupon_B_EmptyCoupon -->
+        <test-method signature="testMCDC_Coupon_D3_Sale10()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testMCDC_Coupon_D3_Sale10" description="MC/DC coupon - D3=True: coupon SALE10" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMCDC_Coupon_D3_Sale10 -->
+        <test-method signature="testMCDC_Coupon_D4_Sale20()[pri:0, instance:lab8.bai7.OrderProcessorTest@7fb33394]" started-at="2026-03-10T15:41:24 GMT+07:00" name="testMCDC_Coupon_D4_Sale20" description="MC/DC coupon - D3=False, D4=True: coupon SALE20" finished-at="2026-03-10T15:41:24 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMCDC_Coupon_D4_Sale20 -->
+      </class> <!-- lab8.bai7.OrderProcessorTest -->
+    </test> <!-- OrderProcessor Allure JaCoCo Tests -->
+  </suite> <!-- Lab8_Bai7_OrderProcessor_Suite -->
+</testng-results>

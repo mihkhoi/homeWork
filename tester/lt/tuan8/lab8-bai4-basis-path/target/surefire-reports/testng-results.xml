@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-10T14:59:15 GMT+07:00" name="Lab8_Bai4_Basis_Path_Suite" finished-at="2026-03-10T14:59:15 GMT+07:00" duration-ms="20">
+    <groups>
+    </groups>
+    <test started-at="2026-03-10T14:59:15 GMT+07:00" name="PhiShip Basis Path Tests" finished-at="2026-03-10T14:59:15 GMT+07:00" duration-ms="20">
+      <class name="lab8.bai4.PhiShipBasisPathTest">
+        <test-method signature="testPath1_InvalidWeight()[pri:0, instance:lab8.bai4.PhiShipBasisPathTest@4ae3c1cd]" started-at="2026-03-10T14:59:15 GMT+07:00" name="testPath1_InvalidWeight" description="Path 1: Trong luong khong hop le" finished-at="2026-03-10T14:59:15 GMT+07:00" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPath1_InvalidWeight -->
+        <test-method signature="testPath2_NoiThanhNheKhongMember()[pri:0, instance:lab8.bai4.PhiShipBasisPathTest@4ae3c1cd]" started-at="2026-03-10T14:59:15 GMT+07:00" name="testPath2_NoiThanhNheKhongMember" description="Path 2: Noi thanh, &lt;= 5kg, khong member" finished-at="2026-03-10T14:59:15 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPath2_NoiThanhNheKhongMember -->
+        <test-method signature="testPath3_NoiThanhNangKhongMember()[pri:0, instance:lab8.bai4.PhiShipBasisPathTest@4ae3c1cd]" started-at="2026-03-10T14:59:15 GMT+07:00" name="testPath3_NoiThanhNangKhongMember" description="Path 3: Noi thanh, &gt; 5kg, khong member" finished-at="2026-03-10T14:59:15 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPath3_NoiThanhNangKhongMember -->
+        <test-method signature="testPath4_NgoaiThanhNheKhongMember()[pri:0, instance:lab8.bai4.PhiShipBasisPathTest@4ae3c1cd]" started-at="2026-03-10T14:59:15 GMT+07:00" name="testPath4_NgoaiThanhNheKhongMember" description="Path 4: Ngoai thanh, &lt;= 3kg, khong member" finished-at="2026-03-10T14:59:15 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPath4_NgoaiThanhNheKhongMember -->
+        <test-method signature="testPath6_TinhKhacNheKhongMember()[pri:0, instance:lab8.bai4.PhiShipBasisPathTest@4ae3c1cd]" started-at="2026-03-10T14:59:15 GMT+07:00" name="testPath6_TinhKhacNheKhongMember" description="Path 6: Tinh khac, &lt;= 2kg, khong member" finished-at="2026-03-10T14:59:15 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPath6_TinhKhacNheKhongMember -->
+        <test-method signature="testPath5_NgoaiThanhNangKhongMember()[pri:0, instance:lab8.bai4.PhiShipBasisPathTest@4ae3c1cd]" started-at="2026-03-10T14:59:15 GMT+07:00" name="testPath5_NgoaiThanhNangKhongMember" description="Path 5: Ngoai thanh, &gt; 3kg, khong member" finished-at="2026-03-10T14:59:15 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPath5_NgoaiThanhNangKhongMember -->
+        <test-method signature="testPath8_NoiThanhNheCoMember()[pri:0, instance:lab8.bai4.PhiShipBasisPathTest@4ae3c1cd]" started-at="2026-03-10T14:59:15 GMT+07:00" name="testPath8_NoiThanhNheCoMember" description="Path 8: Noi thanh, &lt;= 5kg, co member" finished-at="2026-03-10T14:59:15 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPath8_NoiThanhNheCoMember -->
+        <test-method signature="testPath7_TinhKhacNangKhongMember()[pri:0, instance:lab8.bai4.PhiShipBasisPathTest@4ae3c1cd]" started-at="2026-03-10T14:59:15 GMT+07:00" name="testPath7_TinhKhacNangKhongMember" description="Path 7: Tinh khac, &gt; 2kg, khong member" finished-at="2026-03-10T14:59:15 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPath7_TinhKhacNangKhongMember -->
+      </class> <!-- lab8.bai4.PhiShipBasisPathTest -->
+    </test> <!-- PhiShip Basis Path Tests -->
+  </suite> <!-- Lab8_Bai4_Basis_Path_Suite -->
+</testng-results>

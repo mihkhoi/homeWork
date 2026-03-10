@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="13" passed="13" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-10T15:13:35 GMT+07:00" name="Lab8_Bai61_TDD_Suite" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="54">
+    <groups>
+    </groups>
+    <test started-at="2026-03-10T15:13:35 GMT+07:00" name="PhoneValidator Tests" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="54">
+      <class name="lab8.bai61.PhoneValidatorTest">
+        <test-method signature="testInvalid_Empty()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testInvalid_Empty" description="Invalid - rong" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalid_Empty -->
+        <test-method signature="testInvalid_LongLength()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testInvalid_LongLength" description="Invalid - do dai lon hon 10 so" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalid_LongLength -->
+        <test-method signature="testInvalid_Null()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testInvalid_Null" description="Invalid - null" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalid_Null -->
+        <test-method signature="testInvalid_Plus84WrongLength()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testInvalid_Plus84WrongLength" description="Boundary - tuoi tho +84 nhung sau chuan hoa van sai do dai" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalid_Plus84WrongLength -->
+        <test-method signature="testInvalid_OnlySpaces()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testInvalid_OnlySpaces" description="Invalid - chi co khoang trang" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalid_OnlySpaces -->
+        <test-method signature="testInvalid_ShortLength()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testInvalid_ShortLength" description="Invalid - do dai ngan hon 10 so" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalid_ShortLength -->
+        <test-method signature="testInvalid_SpecialCharacter()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testInvalid_SpecialCharacter" description="Invalid - chua ky tu dac biet khong duoc phep" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalid_SpecialCharacter -->
+        <test-method signature="testInvalid_WrongPrefix()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testInvalid_WrongPrefix" description="Invalid - sai prefix sau chuan hoa" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalid_WrongPrefix -->
+        <test-method signature="testValid_03Prefix()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testValid_03Prefix" description="Boundary - prefix 03 hop le" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValid_03Prefix -->
+        <test-method signature="testValid_07Prefix()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testValid_07Prefix" description="Boundary - prefix 07 hop le" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValid_07Prefix -->
+        <test-method signature="testValid_09Prefix()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testValid_09Prefix" description="Valid - so bat dau bang 09 va du 10 chu so" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValid_09Prefix -->
+        <test-method signature="testValid_Plus84Format()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testValid_Plus84Format" description="Valid - so dang +84 va se duoc chuan hoa ve 0xxxxxxxxx" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValid_Plus84Format -->
+        <test-method signature="testValid_WithSpaces()[pri:0, instance:lab8.bai61.PhoneValidatorTest@42f8285e]" started-at="2026-03-10T15:13:35 GMT+07:00" name="testValid_WithSpaces" description="Valid - cho phep khoang trang truoc khi chuan hoa" finished-at="2026-03-10T15:13:35 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValid_WithSpaces -->
+      </class> <!-- lab8.bai61.PhoneValidatorTest -->
+    </test> <!-- PhoneValidator Tests -->
+  </suite> <!-- Lab8_Bai61_TDD_Suite -->
+</testng-results>

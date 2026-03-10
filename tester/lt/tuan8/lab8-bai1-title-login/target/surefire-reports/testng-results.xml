@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-10T14:04:40 GMT+07:00" name="Lab8 Bai1 Suite" finished-at="2026-03-10T14:04:54 GMT+07:00" duration-ms="14350">
+    <groups>
+    </groups>
+    <test started-at="2026-03-10T14:04:40 GMT+07:00" name="Title and Login Tests" finished-at="2026-03-10T14:04:54 GMT+07:00" duration-ms="14350">
+      <class name="lab8.bai1.LoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:46 GMT+07:00" name="setUp" finished-at="2026-03-10T14:04:48 GMT+07:00" duration-ms="1216" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLoginEmptyPassword()[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:48 GMT+07:00" name="testLoginEmptyPassword" description="Bo trong password" finished-at="2026-03-10T14:04:48 GMT+07:00" duration-ms="190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginEmptyPassword -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:48 GMT+07:00" name="tearDown" finished-at="2026-03-10T14:04:48 GMT+07:00" duration-ms="188" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testLoginEmptyPassword status=SUCCESS method=LoginTest.testLoginEmptyPassword()[pri:0, instance:lab8.bai1.LoginTest@309e345f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:48 GMT+07:00" name="setUp" finished-at="2026-03-10T14:04:49 GMT+07:00" duration-ms="1205" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLoginEmptyUsername()[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:49 GMT+07:00" name="testLoginEmptyUsername" description="Bo trong username" finished-at="2026-03-10T14:04:49 GMT+07:00" duration-ms="195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginEmptyUsername -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:49 GMT+07:00" name="tearDown" finished-at="2026-03-10T14:04:50 GMT+07:00" duration-ms="178" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testLoginEmptyUsername status=SUCCESS method=LoginTest.testLoginEmptyUsername()[pri:0, instance:lab8.bai1.LoginTest@309e345f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:50 GMT+07:00" name="setUp" finished-at="2026-03-10T14:04:51 GMT+07:00" duration-ms="1228" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLoginLockedUser()[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:51 GMT+07:00" name="testLoginLockedUser" description="Dang nhap bang locked_out_user" finished-at="2026-03-10T14:04:51 GMT+07:00" duration-ms="199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginLockedUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:51 GMT+07:00" name="tearDown" finished-at="2026-03-10T14:04:51 GMT+07:00" duration-ms="171" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testLoginLockedUser status=SUCCESS method=LoginTest.testLoginLockedUser()[pri:0, instance:lab8.bai1.LoginTest@309e345f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:51 GMT+07:00" name="setUp" finished-at="2026-03-10T14:04:52 GMT+07:00" duration-ms="1160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLoginSuccess()[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:52 GMT+07:00" name="testLoginSuccess" description="Dang nhap thanh cong voi tai khoan hop le" finished-at="2026-03-10T14:04:53 GMT+07:00" duration-ms="203" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginSuccess -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:53 GMT+07:00" name="tearDown" finished-at="2026-03-10T14:04:53 GMT+07:00" duration-ms="223" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testLoginSuccess status=SUCCESS method=LoginTest.testLoginSuccess()[pri:0, instance:lab8.bai1.LoginTest@309e345f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:53 GMT+07:00" name="setUp" finished-at="2026-03-10T14:04:54 GMT+07:00" duration-ms="1139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLoginWrongPassword()[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:54 GMT+07:00" name="testLoginWrongPassword" description="Dang nhap sai mat khau" finished-at="2026-03-10T14:04:54 GMT+07:00" duration-ms="227" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginWrongPassword -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:lab8.bai1.LoginTest@309e345f]" started-at="2026-03-10T14:04:54 GMT+07:00" name="tearDown" finished-at="2026-03-10T14:04:54 GMT+07:00" duration-ms="186" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testLoginWrongPassword status=SUCCESS method=LoginTest.testLoginWrongPassword()[pri:0, instance:lab8.bai1.LoginTest@309e345f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- lab8.bai1.LoginTest -->
+      <class name="lab8.bai1.TitleTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:lab8.bai1.TitleTest@4f638935]" started-at="2026-03-10T14:04:40 GMT+07:00" name="setUp" finished-at="2026-03-10T14:04:42 GMT+07:00" duration-ms="2331" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testLoginFormDisplayed()[pri:0, instance:lab8.bai1.TitleTest@4f638935]" started-at="2026-03-10T14:04:42 GMT+07:00" name="testLoginFormDisplayed" description="Kiem thu form dang nhap hien thi" finished-at="2026-03-10T14:04:42 GMT+07:00" duration-ms="56" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFormDisplayed -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:lab8.bai1.TitleTest@4f638935]" started-at="2026-03-10T14:04:42 GMT+07:00" name="tearDown" finished-at="2026-03-10T14:04:43 GMT+07:00" duration-ms="113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:lab8.bai1.TitleTest@4f638935]" started-at="2026-03-10T14:04:43 GMT+07:00" name="setUp" finished-at="2026-03-10T14:04:44 GMT+07:00" duration-ms="1212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testPageSource()[pri:0, instance:lab8.bai1.TitleTest@4f638935]" started-at="2026-03-10T14:04:44 GMT+07:00" name="testPageSource" description="Kiem thu page source co chua chuoi Swag Labs" finished-at="2026-03-10T14:04:44 GMT+07:00" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPageSource -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:lab8.bai1.TitleTest@4f638935]" started-at="2026-03-10T14:04:44 GMT+07:00" name="tearDown" finished-at="2026-03-10T14:04:44 GMT+07:00" duration-ms="95" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:lab8.bai1.TitleTest@4f638935]" started-at="2026-03-10T14:04:44 GMT+07:00" name="setUp" finished-at="2026-03-10T14:04:45 GMT+07:00" duration-ms="1125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testTitle()[pri:0, instance:lab8.bai1.TitleTest@4f638935]" started-at="2026-03-10T14:04:45 GMT+07:00" name="testTitle" description="Kiem thu tieu de trang chu" finished-at="2026-03-10T14:04:45 GMT+07:00" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTitle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:lab8.bai1.TitleTest@4f638935]" started-at="2026-03-10T14:04:45 GMT+07:00" name="tearDown" finished-at="2026-03-10T14:04:45 GMT+07:00" duration-ms="114" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:lab8.bai1.TitleTest@4f638935]" started-at="2026-03-10T14:04:45 GMT+07:00" name="setUp" finished-at="2026-03-10T14:04:46 GMT+07:00" duration-ms="1234" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testURL()[pri:0, instance:lab8.bai1.TitleTest@4f638935]" started-at="2026-03-10T14:04:46 GMT+07:00" name="testURL" description="Kiem thu URL trang chu" finished-at="2026-03-10T14:04:46 GMT+07:00" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testURL -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:lab8.bai1.TitleTest@4f638935]" started-at="2026-03-10T14:04:46 GMT+07:00" name="tearDown" finished-at="2026-03-10T14:04:46 GMT+07:00" duration-ms="117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- lab8.bai1.TitleTest -->
+    </test> <!-- Title and Login Tests -->
+  </suite> <!-- Lab8 Bai1 Suite -->
+</testng-results>

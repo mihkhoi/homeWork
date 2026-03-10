@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lab8_Bai22_Parallel_Suite" parallel="classes" thread-count="2" verbose="1">
+    <parameter name="browser" value="edge"/>
+    <parameter name="baseUrl" value="https://www.saucedemo.com/"/>
+
+    <test name="Parallel Classes Test">
+        <classes>
+            <class name="lab8.bai22.LoginParallelTest"/>
+            <class name="lab8.bai22.CartParallelTest"/>
+        </classes>
+    </test>
+</suite>

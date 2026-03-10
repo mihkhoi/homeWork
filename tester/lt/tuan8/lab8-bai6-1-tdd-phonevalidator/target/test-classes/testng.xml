@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lab8_Bai61_TDD_Suite">
+    <test name="PhoneValidator Tests">
+        <classes>
+            <class name="lab8.bai61.PhoneValidatorTest"/>
+        </classes>
+    </test>
+</suite>
