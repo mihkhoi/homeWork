@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lab9_Bai1_Suite" parallel="methods" thread-count="3">
+    <parameter name="browser" value="edge"/>
+    <parameter name="env" value="dev"/>
+
+    <test name="Bai1_Verify_Framework">
+        <classes>
+            <class name="tests.Bai1VerificationTest"/>
+        </classes>
+    </test>
+</suite>

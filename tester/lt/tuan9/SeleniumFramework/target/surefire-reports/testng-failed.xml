@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="methods" name="Failed suite [Lab9_Bai1_Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <parameter name="browser" value="edge"/>
+  <parameter name="env" value="dev"/>
+  <test thread-count="3" parallel="methods" name="Bai1_Verify_Framework(failed)" verbose="0">
+    <classes>
+      <class name="tests.Bai1VerificationTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testFailIntentionalToCaptureScreenshot"/>
+        </methods>
+      </class> <!-- tests.Bai1VerificationTest -->
+    </classes>
+  </test> <!-- Bai1_Verify_Framework(failed) -->
+</suite> <!-- Failed suite [Lab9_Bai1_Suite] -->

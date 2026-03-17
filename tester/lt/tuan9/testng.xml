@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lab9_Bai2_Suite" parallel="methods" thread-count="3">
+    <parameter name="browser" value="edge"/>
+    <parameter name="env" value="dev"/>
+
+    <test name="Bai2_Login_And_Cart_Tests">
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.CartTest"/>
+        </classes>
+    </test>
+</suite>
