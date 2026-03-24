@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="39" passed="39" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-24T15:02:46 GMT+07:00" name="Lab10 API Testing Suite" finished-at="2026-03-24T15:03:14 GMT+07:00" duration-ms="27451">
+    <groups>
+    </groups>
+    <test started-at="2026-03-24T15:02:46 GMT+07:00" name="Bai1_Get_Basic" finished-at="2026-03-24T15:02:50 GMT+07:00" duration-ms="3580">
+      <class name="tests.bai1.ReqresGetApiTest">
+        <test-method is-config="true" signature="setupApiSpec()[pri:0, instance:tests.bai1.ReqresGetApiTest@59505b48]" started-at="2026-03-24T15:02:46 GMT+07:00" name="setupApiSpec" finished-at="2026-03-24T15:02:46 GMT+07:00" duration-ms="224" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupApiSpec -->
+        <test-method signature="getNonExistingUser_shouldReturn404AndEmptyBody()[pri:0, instance:tests.bai1.ReqresGetApiTest@59505b48]" started-at="2026-03-24T15:02:46 GMT+07:00" name="getNonExistingUser_shouldReturn404AndEmptyBody" description="GET /api/users/9999 should return 404 and empty object" finished-at="2026-03-24T15:02:48 GMT+07:00" duration-ms="1152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getNonExistingUser_shouldReturn404AndEmptyBody -->
+        <test-method signature="getUser3_shouldReturnValidReqresEmailAndFirstName()[pri:0, instance:tests.bai1.ReqresGetApiTest@59505b48]" started-at="2026-03-24T15:02:48 GMT+07:00" name="getUser3_shouldReturnValidReqresEmailAndFirstName" description="GET /api/users/3 should return valid reqres email and non-empty first name" finished-at="2026-03-24T15:02:48 GMT+07:00" duration-ms="831" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUser3_shouldReturnValidReqresEmailAndFirstName -->
+        <test-method signature="getUsersPage1_shouldReturnPage1AndNonEmptyData()[pri:0, instance:tests.bai1.ReqresGetApiTest@59505b48]" started-at="2026-03-24T15:02:48 GMT+07:00" name="getUsersPage1_shouldReturnPage1AndNonEmptyData" description="GET /api/users?page=1 should return page 1 with at least one user" finished-at="2026-03-24T15:02:49 GMT+07:00" duration-ms="656" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUsersPage1_shouldReturnPage1AndNonEmptyData -->
+        <test-method signature="getUsersPage2_shouldContainRequiredFieldsForEachUser()[pri:0, instance:tests.bai1.ReqresGetApiTest@59505b48]" started-at="2026-03-24T15:02:49 GMT+07:00" name="getUsersPage2_shouldContainRequiredFieldsForEachUser" description="GET /api/users?page=2 should return users with required fields" finished-at="2026-03-24T15:02:50 GMT+07:00" duration-ms="667" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUsersPage2_shouldContainRequiredFieldsForEachUser -->
+      </class> <!-- tests.bai1.ReqresGetApiTest -->
+    </test> <!-- Bai1_Get_Basic -->
+    <test started-at="2026-03-24T15:02:50 GMT+07:00" name="Bai2_CRUD_Full" finished-at="2026-03-24T15:02:53 GMT+07:00" duration-ms="2945">
+      <class name="tests.bai2.ReqresCrudApiTest">
+        <test-method is-config="true" signature="setupApiSpec()[pri:0, instance:tests.bai2.ReqresCrudApiTest@740cae06]" started-at="2026-03-24T15:02:50 GMT+07:00" name="setupApiSpec" finished-at="2026-03-24T15:02:50 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupApiSpec -->
+        <test-method signature="createThenGet_shouldConfirmPersistedData()[pri:0, instance:tests.bai2.ReqresCrudApiTest@740cae06]" started-at="2026-03-24T15:02:50 GMT+07:00" name="createThenGet_shouldConfirmPersistedData" description="Collections persistence should work, or pass compatibility path when using read-only workspace key" finished-at="2026-03-24T15:02:50 GMT+07:00" duration-ms="754" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createThenGet_shouldConfirmPersistedData -->
+        <test-method signature="createUser_shouldReturn201AndCreatedFields()[pri:0, instance:tests.bai2.ReqresCrudApiTest@740cae06]" started-at="2026-03-24T15:02:50 GMT+07:00" name="createUser_shouldReturn201AndCreatedFields" description="POST /api/users should create a user and return id with createdAt" finished-at="2026-03-24T15:02:51 GMT+07:00" duration-ms="676" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUser_shouldReturn201AndCreatedFields -->
+        <test-method signature="deleteUser_shouldReturn204AndEmptyBody()[pri:0, instance:tests.bai2.ReqresCrudApiTest@740cae06]" started-at="2026-03-24T15:02:51 GMT+07:00" name="deleteUser_shouldReturn204AndEmptyBody" description="DELETE /api/users/2 should return 204 and empty body" finished-at="2026-03-24T15:02:52 GMT+07:00" duration-ms="396" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteUser_shouldReturn204AndEmptyBody -->
+        <test-method signature="patchUser_shouldUpdateOnlySentField()[pri:0, instance:tests.bai2.ReqresCrudApiTest@740cae06]" started-at="2026-03-24T15:02:52 GMT+07:00" name="patchUser_shouldUpdateOnlySentField" description="PATCH /api/users/2 should update only provided field and return updatedAt" finished-at="2026-03-24T15:02:52 GMT+07:00" duration-ms="430" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- patchUser_shouldUpdateOnlySentField -->
+        <test-method signature="updateUserWithPut_shouldReturnUpdatedFields()[pri:0, instance:tests.bai2.ReqresCrudApiTest@740cae06]" started-at="2026-03-24T15:02:52 GMT+07:00" name="updateUserWithPut_shouldReturnUpdatedFields" description="PUT /api/users/2 should update full user payload and return updatedAt" finished-at="2026-03-24T15:02:53 GMT+07:00" duration-ms="679" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateUserWithPut_shouldReturnUpdatedFields -->
+      </class> <!-- tests.bai2.ReqresCrudApiTest -->
+    </test> <!-- Bai2_CRUD_Full -->
+    <test started-at="2026-03-24T15:02:53 GMT+07:00" name="Bai3_Schema_Validation" finished-at="2026-03-24T15:02:54 GMT+07:00" duration-ms="1350">
+      <class name="tests.bai3.ReqresSchemaApiTest">
+        <test-method is-config="true" signature="setupApiSpec()[pri:0, instance:tests.bai3.ReqresSchemaApiTest@76a4ebf2]" started-at="2026-03-24T15:02:53 GMT+07:00" name="setupApiSpec" finished-at="2026-03-24T15:02:53 GMT+07:00" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupApiSpec -->
+        <test-method signature="createUser_shouldMatchCreateUserSchema()[pri:0, instance:tests.bai3.ReqresSchemaApiTest@76a4ebf2]" started-at="2026-03-24T15:02:53 GMT+07:00" name="createUser_shouldMatchCreateUserSchema" description="POST /api/users should match create-user schema" finished-at="2026-03-24T15:02:53 GMT+07:00" duration-ms="511" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUser_shouldMatchCreateUserSchema -->
+        <test-method signature="listUsers_shouldMatchUserListSchema()[pri:0, instance:tests.bai3.ReqresSchemaApiTest@76a4ebf2]" started-at="2026-03-24T15:02:53 GMT+07:00" name="listUsers_shouldMatchUserListSchema" description="GET /api/users should match user-list schema" finished-at="2026-03-24T15:02:54 GMT+07:00" duration-ms="431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listUsers_shouldMatchUserListSchema -->
+        <test-method signature="singleUser_shouldMatchUserSchema()[pri:0, instance:tests.bai3.ReqresSchemaApiTest@76a4ebf2]" started-at="2026-03-24T15:02:54 GMT+07:00" name="singleUser_shouldMatchUserSchema" description="GET /api/users/2 should match single user schema" finished-at="2026-03-24T15:02:54 GMT+07:00" duration-ms="402" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- singleUser_shouldMatchUserSchema -->
+      </class> <!-- tests.bai3.ReqresSchemaApiTest -->
+    </test> <!-- Bai3_Schema_Validation -->
+    <test started-at="2026-03-24T15:02:54 GMT+07:00" name="Bai4_Authorization_And_DataDriven" finished-at="2026-03-24T15:02:59 GMT+07:00" duration-ms="5054">
+      <class name="tests.bai4.ReqresAuthorizationApiTest">
+        <test-method is-config="true" signature="setupApiSpec()[pri:0, instance:tests.bai4.ReqresAuthorizationApiTest@75d3a5e0]" started-at="2026-03-24T15:02:54 GMT+07:00" name="setupApiSpec" finished-at="2026-03-24T15:02:54 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupApiSpec -->
+        <test-method signature="loginScenarios_shouldBehaveAsExpected(java.lang.String,java.lang.String,int,java.lang.String)[pri:0, instance:tests.bai4.ReqresAuthorizationApiTest@75d3a5e0]" started-at="2026-03-24T15:02:54 GMT+07:00" name="loginScenarios_shouldBehaveAsExpected" description="Data-driven login scenarios should return expected status and error" data-provider="loginScenarios" finished-at="2026-03-24T15:02:54 GMT+07:00" duration-ms="421" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[eve.holt@reqres.in]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[pistol]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="3">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenarios_shouldBehaveAsExpected -->
+        <test-method signature="loginScenarios_shouldBehaveAsExpected(java.lang.String,java.lang.String,int,java.lang.String)[pri:0, instance:tests.bai4.ReqresAuthorizationApiTest@75d3a5e0]" started-at="2026-03-24T15:02:54 GMT+07:00" name="loginScenarios_shouldBehaveAsExpected" description="Data-driven login scenarios should return expected status and error" data-provider="loginScenarios" finished-at="2026-03-24T15:02:55 GMT+07:00" duration-ms="728" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[eve.holt@reqres.in]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[400]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Missing password]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenarios_shouldBehaveAsExpected -->
+        <test-method signature="loginScenarios_shouldBehaveAsExpected(java.lang.String,java.lang.String,int,java.lang.String)[pri:0, instance:tests.bai4.ReqresAuthorizationApiTest@75d3a5e0]" started-at="2026-03-24T15:02:55 GMT+07:00" name="loginScenarios_shouldBehaveAsExpected" description="Data-driven login scenarios should return expected status and error" data-provider="loginScenarios" finished-at="2026-03-24T15:02:56 GMT+07:00" duration-ms="404" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[pistol]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[400]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Missing email or username]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenarios_shouldBehaveAsExpected -->
+        <test-method signature="loginScenarios_shouldBehaveAsExpected(java.lang.String,java.lang.String,int,java.lang.String)[pri:0, instance:tests.bai4.ReqresAuthorizationApiTest@75d3a5e0]" started-at="2026-03-24T15:02:56 GMT+07:00" name="loginScenarios_shouldBehaveAsExpected" description="Data-driven login scenarios should return expected status and error" data-provider="loginScenarios" finished-at="2026-03-24T15:02:56 GMT+07:00" duration-ms="396" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[notexist@reqres.in]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrongpass]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[400]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[user not found]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenarios_shouldBehaveAsExpected -->
+        <test-method signature="loginScenarios_shouldBehaveAsExpected(java.lang.String,java.lang.String,int,java.lang.String)[pri:0, instance:tests.bai4.ReqresAuthorizationApiTest@75d3a5e0]" started-at="2026-03-24T15:02:56 GMT+07:00" name="loginScenarios_shouldBehaveAsExpected" description="Data-driven login scenarios should return expected status and error" data-provider="loginScenarios" finished-at="2026-03-24T15:02:56 GMT+07:00" duration-ms="391" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[invalid-email]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[pass123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[400]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[user not found]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginScenarios_shouldBehaveAsExpected -->
+        <test-method signature="loginWithoutEmail_shouldReturn400()[pri:0, instance:tests.bai4.ReqresAuthorizationApiTest@75d3a5e0]" started-at="2026-03-24T15:02:56 GMT+07:00" name="loginWithoutEmail_shouldReturn400" description="POST /api/login without email should return Missing email or username" finished-at="2026-03-24T15:02:57 GMT+07:00" duration-ms="644" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithoutEmail_shouldReturn400 -->
+        <test-method signature="loginWithoutPassword_shouldReturn400()[pri:0, instance:tests.bai4.ReqresAuthorizationApiTest@75d3a5e0]" started-at="2026-03-24T15:02:57 GMT+07:00" name="loginWithoutPassword_shouldReturn400" description="POST /api/login without password should return Missing password" finished-at="2026-03-24T15:02:58 GMT+07:00" duration-ms="641" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithoutPassword_shouldReturn400 -->
+        <test-method signature="login_shouldReturnTokenForValidCredential()[pri:0, instance:tests.bai4.ReqresAuthorizationApiTest@75d3a5e0]" started-at="2026-03-24T15:02:58 GMT+07:00" name="login_shouldReturnTokenForValidCredential" description="POST /api/login should return token for valid credential" finished-at="2026-03-24T15:02:58 GMT+07:00" duration-ms="642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_shouldReturnTokenForValidCredential -->
+        <test-method signature="registerWithoutPassword_shouldReturn400()[pri:0, instance:tests.bai4.ReqresAuthorizationApiTest@75d3a5e0]" started-at="2026-03-24T15:02:58 GMT+07:00" name="registerWithoutPassword_shouldReturn400" description="POST /api/register without password should return Missing password" finished-at="2026-03-24T15:02:59 GMT+07:00" duration-ms="386" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerWithoutPassword_shouldReturn400 -->
+        <test-method signature="register_shouldReturnIdAndToken()[pri:0, instance:tests.bai4.ReqresAuthorizationApiTest@75d3a5e0]" started-at="2026-03-24T15:02:59 GMT+07:00" name="register_shouldReturnIdAndToken" description="POST /api/register should return id and token" finished-at="2026-03-24T15:02:59 GMT+07:00" duration-ms="383" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register_shouldReturnIdAndToken -->
+      </class> <!-- tests.bai4.ReqresAuthorizationApiTest -->
+    </test> <!-- Bai4_Authorization_And_DataDriven -->
+    <test started-at="2026-03-24T15:02:59 GMT+07:00" name="Bai5_Performance_SLA" finished-at="2026-03-24T15:03:05 GMT+07:00" duration-ms="6034">
+      <class name="tests.bai5.ReqresPerformanceApiTest">
+        <test-method is-config="true" signature="setupApiSpec()[pri:0, instance:tests.bai5.ReqresPerformanceApiTest@1c5920df]" started-at="2026-03-24T15:02:59 GMT+07:00" name="setupApiSpec" finished-at="2026-03-24T15:02:59 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupApiSpec -->
+        <test-method signature="endpoints_shouldMeetSla(java.lang.String,java.lang.String,int,long)[pri:0, instance:tests.bai5.ReqresPerformanceApiTest@1c5920df]" started-at="2026-03-24T15:02:59 GMT+07:00" name="endpoints_shouldMeetSla" description="All main ReqRes endpoints should satisfy SLA" data-provider="apiSlaScenarios" finished-at="2026-03-24T15:03:00 GMT+07:00" duration-ms="651" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[GET]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[/users]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2000]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endpoints_shouldMeetSla -->
+        <test-method signature="endpoints_shouldMeetSla(java.lang.String,java.lang.String,int,long)[pri:0, instance:tests.bai5.ReqresPerformanceApiTest@1c5920df]" started-at="2026-03-24T15:03:00 GMT+07:00" name="endpoints_shouldMeetSla" description="All main ReqRes endpoints should satisfy SLA" data-provider="apiSlaScenarios" finished-at="2026-03-24T15:03:00 GMT+07:00" duration-ms="368" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[GET]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[/users/2]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1500]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endpoints_shouldMeetSla -->
+        <test-method signature="endpoints_shouldMeetSla(java.lang.String,java.lang.String,int,long)[pri:0, instance:tests.bai5.ReqresPerformanceApiTest@1c5920df]" started-at="2026-03-24T15:03:00 GMT+07:00" name="endpoints_shouldMeetSla" description="All main ReqRes endpoints should satisfy SLA" data-provider="apiSlaScenarios" finished-at="2026-03-24T15:03:00 GMT+07:00" duration-ms="377" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[POST]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[/users]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[201]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[3000]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endpoints_shouldMeetSla -->
+        <test-method signature="endpoints_shouldMeetSla(java.lang.String,java.lang.String,int,long)[pri:0, instance:tests.bai5.ReqresPerformanceApiTest@1c5920df]" started-at="2026-03-24T15:03:00 GMT+07:00" name="endpoints_shouldMeetSla" description="All main ReqRes endpoints should satisfy SLA" data-provider="apiSlaScenarios" finished-at="2026-03-24T15:03:01 GMT+07:00" duration-ms="378" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[POST]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[/login]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[2000]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endpoints_shouldMeetSla -->
+        <test-method signature="endpoints_shouldMeetSla(java.lang.String,java.lang.String,int,long)[pri:0, instance:tests.bai5.ReqresPerformanceApiTest@1c5920df]" started-at="2026-03-24T15:03:01 GMT+07:00" name="endpoints_shouldMeetSla" description="All main ReqRes endpoints should satisfy SLA" data-provider="apiSlaScenarios" finished-at="2026-03-24T15:03:01 GMT+07:00" duration-ms="372" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DELETE]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[/users/2]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[204]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1000]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endpoints_shouldMeetSla -->
+        <test-method signature="monitorSingleEndpointAcross10Runs_shouldPrintAverageMinMax()[pri:0, instance:tests.bai5.ReqresPerformanceApiTest@1c5920df]" started-at="2026-03-24T15:03:01 GMT+07:00" name="monitorSingleEndpointAcross10Runs_shouldPrintAverageMinMax" description="GET /api/users/2 should be monitored across 10 runs" finished-at="2026-03-24T15:03:05 GMT+07:00" duration-ms="3879" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- monitorSingleEndpointAcross10Runs_shouldPrintAverageMinMax -->
+      </class> <!-- tests.bai5.ReqresPerformanceApiTest -->
+    </test> <!-- Bai5_Performance_SLA -->
+    <test started-at="2026-03-24T15:03:05 GMT+07:00" name="Bai6_Api_Ui_Integration" finished-at="2026-03-24T15:03:11 GMT+07:00" duration-ms="5594">
+      <class name="tests.bai6.ApiUiPartATest">
+        <test-method is-config="true" signature="setupDriver()[pri:0, instance:tests.bai6.ApiUiPartATest@68c9133c]" started-at="2026-03-24T15:03:05 GMT+07:00" name="setupDriver" finished-at="2026-03-24T15:03:06 GMT+07:00" duration-ms="752" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupDriver -->
+        <test-method is-config="true" signature="setupApiPrecondition()[pri:0, instance:tests.bai6.ApiUiPartATest@68c9133c]" started-at="2026-03-24T15:03:06 GMT+07:00" name="setupApiPrecondition" finished-at="2026-03-24T15:03:06 GMT+07:00" duration-ms="392" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupApiPrecondition -->
+        <test-method signature="apiLoginPrecondition_shouldReturnToken()[pri:0, instance:tests.bai6.ApiUiPartATest@68c9133c]" started-at="2026-03-24T15:03:06 GMT+07:00" name="apiLoginPrecondition_shouldReturnToken" description="API login precondition should return token" finished-at="2026-03-24T15:03:06 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- apiLoginPrecondition_shouldReturnToken -->
+        <test-method is-config="true" signature="tearDownDriver()[pri:0, instance:tests.bai6.ApiUiPartATest@68c9133c]" started-at="2026-03-24T15:03:06 GMT+07:00" name="tearDownDriver" finished-at="2026-03-24T15:03:06 GMT+07:00" duration-ms="79" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownDriver -->
+        <test-method is-config="true" signature="setupDriver()[pri:0, instance:tests.bai6.ApiUiPartATest@68c9133c]" started-at="2026-03-24T15:03:06 GMT+07:00" name="setupDriver" finished-at="2026-03-24T15:03:07 GMT+07:00" duration-ms="546" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupDriver -->
+        <test-method is-config="true" signature="setupApiPrecondition()[pri:0, instance:tests.bai6.ApiUiPartATest@68c9133c]" started-at="2026-03-24T15:03:07 GMT+07:00" name="setupApiPrecondition" finished-at="2026-03-24T15:03:07 GMT+07:00" duration-ms="400" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupApiPrecondition -->
+        <test-method signature="uiLogin_shouldNavigateToInventory()[pri:0, instance:tests.bai6.ApiUiPartATest@68c9133c]" started-at="2026-03-24T15:03:07 GMT+07:00" name="uiLogin_shouldNavigateToInventory" description="UI login should navigate to inventory only when API precondition passed" finished-at="2026-03-24T15:03:08 GMT+07:00" depends-on-methods="tests.bai6.ApiUiPartATest.apiLoginPrecondition_shouldReturnToken" duration-ms="1169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- uiLogin_shouldNavigateToInventory -->
+        <test-method is-config="true" signature="tearDownDriver()[pri:0, instance:tests.bai6.ApiUiPartATest@68c9133c]" started-at="2026-03-24T15:03:08 GMT+07:00" name="tearDownDriver" finished-at="2026-03-24T15:03:09 GMT+07:00" duration-ms="85" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownDriver -->
+      </class> <!-- tests.bai6.ApiUiPartATest -->
+      <class name="tests.bai6.ApiUiPartBTest">
+        <test-method is-config="true" signature="setupDriver()[pri:0, instance:tests.bai6.ApiUiPartBTest@402c4085]" started-at="2026-03-24T15:03:09 GMT+07:00" name="setupDriver" finished-at="2026-03-24T15:03:09 GMT+07:00" duration-ms="591" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupDriver -->
+        <test-method is-config="true" signature="checkApiHealth()[pri:0, instance:tests.bai6.ApiUiPartBTest@402c4085]" started-at="2026-03-24T15:03:09 GMT+07:00" name="checkApiHealth" finished-at="2026-03-24T15:03:10 GMT+07:00" duration-ms="375" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkApiHealth -->
+        <test-method signature="uiCartFlow_shouldDependOnApiHealth()[pri:0, instance:tests.bai6.ApiUiPartBTest@402c4085]" started-at="2026-03-24T15:03:10 GMT+07:00" name="uiCartFlow_shouldDependOnApiHealth" description="UI cart flow should be skipped when ReqRes API is not alive" finished-at="2026-03-24T15:03:11 GMT+07:00" duration-ms="1086" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- uiCartFlow_shouldDependOnApiHealth -->
+        <test-method is-config="true" signature="tearDownDriver()[pri:0, instance:tests.bai6.ApiUiPartBTest@402c4085]" started-at="2026-03-24T15:03:11 GMT+07:00" name="tearDownDriver" finished-at="2026-03-24T15:03:11 GMT+07:00" duration-ms="99" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownDriver -->
+      </class> <!-- tests.bai6.ApiUiPartBTest -->
+    </test> <!-- Bai6_Api_Ui_Integration -->
+    <test started-at="2026-03-24T15:03:11 GMT+07:00" name="Bai7_JsonPlaceholder_Project" finished-at="2026-03-24T15:03:14 GMT+07:00" duration-ms="2862">
+      <class name="tests.bai7.JsonPlaceholderUserApiTest">
+        <test-method is-config="true" signature="setupApiSpec()[pri:0, instance:tests.bai7.JsonPlaceholderUserApiTest@231f98ef]" started-at="2026-03-24T15:03:13 GMT+07:00" name="setupApiSpec" finished-at="2026-03-24T15:03:13 GMT+07:00" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupApiSpec -->
+        <test-method signature="getUser1_shouldMatchUserSchema()[pri:0, instance:tests.bai7.JsonPlaceholderUserApiTest@231f98ef]" started-at="2026-03-24T15:03:13 GMT+07:00" name="getUser1_shouldMatchUserSchema" description="GET /users/1 should match user schema with nested address" finished-at="2026-03-24T15:03:13 GMT+07:00" duration-ms="125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUser1_shouldMatchUserSchema -->
+        <test-method signature="getUsers_shouldReturn10Users()[pri:0, instance:tests.bai7.JsonPlaceholderUserApiTest@231f98ef]" started-at="2026-03-24T15:03:13 GMT+07:00" name="getUsers_shouldReturn10Users" description="GET /users should return 10 users" finished-at="2026-03-24T15:03:14 GMT+07:00" duration-ms="122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUsers_shouldReturn10Users -->
+      </class> <!-- tests.bai7.JsonPlaceholderUserApiTest -->
+      <class name="tests.bai7.CommentApiTest">
+        <test-method is-config="true" signature="setupApiSpec()[pri:0, instance:tests.bai7.CommentApiTest@31ea9581]" started-at="2026-03-24T15:03:13 GMT+07:00" name="setupApiSpec" finished-at="2026-03-24T15:03:13 GMT+07:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupApiSpec -->
+        <test-method signature="getCommentsByPost_shouldReturn5Comments()[pri:0, instance:tests.bai7.CommentApiTest@31ea9581]" started-at="2026-03-24T15:03:13 GMT+07:00" name="getCommentsByPost_shouldReturn5Comments" description="GET /posts/1/comments should return 5 comments for postId 1" finished-at="2026-03-24T15:03:13 GMT+07:00" duration-ms="197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCommentsByPost_shouldReturn5Comments -->
+      </class> <!-- tests.bai7.CommentApiTest -->
+      <class name="tests.bai7.PostApiTest">
+        <test-method is-config="true" signature="setupApiSpec()[pri:0, instance:tests.bai7.PostApiTest@6440112d]" started-at="2026-03-24T15:03:11 GMT+07:00" name="setupApiSpec" finished-at="2026-03-24T15:03:11 GMT+07:00" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupApiSpec -->
+        <test-method signature="createPost_shouldReturnCreatedPost()[pri:0, instance:tests.bai7.PostApiTest@6440112d]" started-at="2026-03-24T15:03:11 GMT+07:00" name="createPost_shouldReturnCreatedPost" description="POST /posts should create a new post contract" finished-at="2026-03-24T15:03:11 GMT+07:00" duration-ms="741" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPost_shouldReturnCreatedPost -->
+        <test-method signature="deletePost_shouldReturn200()[pri:0, instance:tests.bai7.PostApiTest@6440112d]" started-at="2026-03-24T15:03:11 GMT+07:00" name="deletePost_shouldReturn200" description="DELETE /posts/1 should return success status" finished-at="2026-03-24T15:03:12 GMT+07:00" duration-ms="352" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deletePost_shouldReturn200 -->
+        <test-method signature="getAllPosts_shouldReturn100Records()[pri:0, instance:tests.bai7.PostApiTest@6440112d]" started-at="2026-03-24T15:03:12 GMT+07:00" name="getAllPosts_shouldReturn100Records" description="GET /posts should return 100 posts" finished-at="2026-03-24T15:03:12 GMT+07:00" duration-ms="254" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAllPosts_shouldReturn100Records -->
+        <test-method signature="getSinglePost_shouldReturnPost1()[pri:0, instance:tests.bai7.PostApiTest@6440112d]" started-at="2026-03-24T15:03:12 GMT+07:00" name="getSinglePost_shouldReturnPost1" description="GET /posts/1 should return post id 1 and match schema" finished-at="2026-03-24T15:03:12 GMT+07:00" duration-ms="165" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSinglePost_shouldReturnPost1 -->
+        <test-method signature="updatePost_shouldReturnUpdatedPost()[pri:0, instance:tests.bai7.PostApiTest@6440112d]" started-at="2026-03-24T15:03:12 GMT+07:00" name="updatePost_shouldReturnUpdatedPost" description="PUT /posts/1 should update full post payload" finished-at="2026-03-24T15:03:13 GMT+07:00" duration-ms="891" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updatePost_shouldReturnUpdatedPost -->
+      </class> <!-- tests.bai7.PostApiTest -->
+    </test> <!-- Bai7_JsonPlaceholder_Project -->
+  </suite> <!-- Lab10 API Testing Suite -->
+</testng-results>

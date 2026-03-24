@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Lab10 API Testing Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Bai2_CRUD_Full(failed)" verbose="0">
+    <classes>
+      <class name="tests.bai2.ReqresCrudApiTest">
+        <methods>
+          <include name="setupApiSpec"/>
+          <include name="createThenGet_shouldConfirmPersistedData"/>
+        </methods>
+      </class> <!-- tests.bai2.ReqresCrudApiTest -->
+    </classes>
+  </test> <!-- Bai2_CRUD_Full(failed) -->
+</suite> <!-- Failed suite [Lab10 API Testing Suite] -->

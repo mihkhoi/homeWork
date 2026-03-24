@@ -14,6 +14,10 @@ import static org.hamcrest.Matchers.lessThan;
 public
 class ApiBaseTest {
 
+    // DÁN KEY CỦA BẠN VÀO ĐÂY
+  private
+    static final String REQRES_API_KEY = "reqres_7e9abe50e2074205afe71a02e24762c3";
+
   protected
     RequestSpecification requestSpec;
   protected
@@ -31,9 +35,8 @@ class ApiBaseTest {
                                          .addFilter(new RequestLoggingFilter())
                                          .addFilter(new ResponseLoggingFilter());
 
-        String apiKey = System.getenv("REQRES_API_KEY");
-        if (shouldSendReqresApiKey() && apiKey != null && !apiKey.isBlank()) {
-            builder.addHeader("x-api-key", apiKey);
+        if (shouldSendReqresApiKey()) {
+            builder.addHeader("x-api-key", REQRES_API_KEY);
         }
 
         requestSpec = builder.build();
@@ -60,7 +63,7 @@ class ApiBaseTest {
 
   protected
     boolean shouldSendReqresApiKey() {
-        return getBaseUri().contains("reqres.in");
+        return true;
     }
 
   public

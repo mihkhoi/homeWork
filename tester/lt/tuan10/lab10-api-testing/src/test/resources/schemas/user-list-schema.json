@@ -38,6 +38,10 @@
                 "url": { "type": "string" },
                 "text": { "type": "string" }
             }
+        },
+        "_meta": {
+            "type": "object",
+            "additionalProperties": true
         }
     }
 }

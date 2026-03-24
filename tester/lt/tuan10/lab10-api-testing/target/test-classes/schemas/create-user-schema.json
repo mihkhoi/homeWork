@@ -7,6 +7,10 @@
         "name": { "type": "string" },
         "job": { "type": "string" },
         "id": { "type": "string" },
-        "createdAt": { "type": "string" }
+        "createdAt": { "type": "string" },
+        "_meta": {
+            "type": "object",
+            "additionalProperties": true
+        }
     }
 }

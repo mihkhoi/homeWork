@@ -1,9 +1,9 @@
 package models.reqres;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public
-class UpdateUserResponse {
+@JsonIgnoreProperties(ignoreUnknown = true) public class UpdateUserResponse {
     @JsonProperty("name") public String name;
 
     @JsonProperty("job") public String job;
