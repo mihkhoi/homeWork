@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Not found</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <main class="container" style="padding-top: 30px">
+            <div class="card">
+                <h1>Không tìm thấy sản phẩm</h1>
+                <p class="muted" th:text="${message}"></p>
+                <a class="btn" href="/products" style="text-decoration: none"
+                    >Quay lại products</a
+                >
+            </div>
+        </main>
+    </body>
+</html>

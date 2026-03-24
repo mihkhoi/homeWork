@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Admin Orders</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container topbar__inner">
+                <a class="brand" href="/admin">Admin Dashboard</a>
+                <nav class="nav">
+                    <a href="/admin/products">Products</a>
+                    <a href="/admin/orders">Orders</a>
+                    <a href="/admin/customers">Customers</a>
+                    <a href="/logout">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <h1>Quản lý đơn hàng</h1>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Mã đơn</th>
+                        <th>UserId</th>
+                        <th>Ngày tạo</th>
+                        <th>Trạng thái</th>
+                        <th>Tổng tiền</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="o : ${orders}">
+                        <td th:text="${o.id}"></td>
+                        <td th:text="${o.userId}"></td>
+                        <td th:text="${o.createdAt}"></td>
+                        <td>
+                            <span
+                                class="badge"
+                                th:text="${o.status}"
+                                th:style="${o.status == 'CANCELLED'} ? 'background:#6b7280;' :
+                        (${o.status == 'COMPLETED'} ? 'background:#16a34a;' : '')"
+                            ></span>
+                        </td>
+                        <td>
+                            <span
+                                th:text="${#numbers.formatInteger(o.total,0,'COMMA')}"
+                            ></span>
+                            VND
+                        </td>
+                        <td>
+                            <a
+                                class="btn btn-secondary"
+                                th:href="@{/admin/orders/{id}(id=${o.id})}"
+                                style="text-decoration: none"
+                                >Chi tiết</a
+                            >
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>

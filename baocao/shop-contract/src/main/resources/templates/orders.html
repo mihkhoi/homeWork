@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Lịch sử đơn hàng</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container topbar__inner">
+                <a class="brand" href="/">ShopContract</a>
+                <nav class="nav">
+                    <a href="/products">Sản phẩm</a>
+                    <a href="/cart">Giỏ hàng</a>
+                    <a href="/orders">Đơn hàng</a>
+                    <a th:if="${userEmail != null}" href="/profile">Hồ sơ</a>
+                    <a th:if="${role == 'ADMIN'}" href="/admin">Admin</a>
+                    <a href="/logout">Đăng xuất</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <h1>Lịch sử đơn hàng</h1>
+            <p class="muted">Danh sách các đơn hàng đã đặt.</p>
+
+            <div
+                class="card"
+                th:if="${success}"
+                style="margin-bottom: 16px; color: #16a34a; font-weight: 700"
+            >
+                <span th:text="${success}"></span>
+            </div>
+
+            <div
+                class="card"
+                th:if="${error}"
+                style="margin-bottom: 16px; color: #dc2626; font-weight: 700"
+            >
+                <span th:text="${error}"></span>
+            </div>
+
+            <div class="card" th:if="${#lists.isEmpty(orders)}">
+                Bạn chưa có đơn hàng nào. <a href="/products">Mua sắm ngay</a>
+            </div>
+
+            <table class="table" th:if="${!#lists.isEmpty(orders)}">
+                <thead>
+                    <tr>
+                        <th>Mã đơn</th>
+                        <th>Địa chỉ</th>
+                        <th>Ngày tạo</th>
+                        <th>Trạng thái</th>
+                        <th>Tổng tiền</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="o : ${orders}">
+                        <td th:text="${o.id}">1</td>
+                        <td th:text="${o.address}">Địa chỉ</td>
+                        <td th:text="${o.createdAt}">Ngày</td>
+                        <td>
+                            <span
+                                class="badge"
+                                th:text="${o.status}"
+                                th:style="${o.status == 'CANCELLED'} ? 'background:#6b7280;' :
+                                (${o.status == 'COMPLETED'} ? 'background:#16a34a;' :
+                                (${o.status == 'SHIPPING'} ? 'background:#2563eb;' : ''))"
+                            >
+                                PENDING
+                            </span>
+                        </td>
+                        <td>
+                            <span
+                                th:text="${#numbers.formatInteger(o.total,0,'COMMA')}"
+                            ></span>
+                            VND
+                        </td>
+                        <td>
+                            <div
+                                style="display: flex; gap: 8px; flex-wrap: wrap"
+                            >
+                                <a
+                                    class="btn btn-secondary"
+                                    th:href="@{/orders/{id}(id=${o.id})}"
+                                    style="text-decoration: none"
+                                >
+                                    Xem chi tiết
+                                </a>
+
+                                <form
+                                    th:if="${o.status == 'PENDING' or o.status == 'CONFIRMED'}"
+                                    method="post"
+                                    th:action="@{/orders/{id}/cancel(id=${o.id})}"
+                                    onsubmit="return confirm('Bạn có chắc muốn hủy đơn này không?');"
+                                >
+                                    <button
+                                        type="submit"
+                                        class="btn"
+                                        style="background: #dc2626"
+                                    >
+                                        Hủy đơn
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+                <small>© 2026 ShopContract</small>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Đặt hàng thành công</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <main class="container" style="padding-top: 40px">
+            <div
+                class="card"
+                style="max-width: 700px; margin: 0 auto; text-align: center"
+            >
+                <h1>🎉 Đặt hàng thành công</h1>
+                <p class="muted">Đơn hàng của bạn đã được tạo thành công.</p>
+
+                <div style="margin-top: 20px">
+                    <p>Mã đơn hàng: <strong th:text="${orderId}"></strong></p>
+                    <p>
+                        Tổng tiền:
+                        <strong style="font-size: 22px; color: #ee4d2d"
+                            ><span
+                                th:text="${#numbers.formatInteger(total,0,'COMMA')}"
+                            ></span>
+                            VND</strong
+                        >
+                    </p>
+                </div>
+
+                <div style="margin-top: 20px">
+                    <a
+                        class="btn"
+                        href="/orders"
+                        style="text-decoration: none; display: inline-block"
+                        >Xem đơn hàng</a
+                    >
+                    <a
+                        class="btn btn-secondary"
+                        href="/products"
+                        style="
+                            text-decoration: none;
+                            display: inline-block;
+                            margin-left: 8px;
+                        "
+                        >Tiếp tục mua</a
+                    >
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

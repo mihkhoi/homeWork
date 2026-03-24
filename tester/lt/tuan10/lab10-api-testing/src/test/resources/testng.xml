@@ -1,0 +1,47 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Lab10 API Testing Suite" verbose="1">
+    <test name="Bai1_Get_Basic">
+        <classes>
+            <class name="tests.bai1.ReqresGetApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Bai2_CRUD_Full">
+        <classes>
+            <class name="tests.bai2.ReqresCrudApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Bai3_Schema_Validation">
+        <classes>
+            <class name="tests.bai3.ReqresSchemaApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Bai4_Authorization_And_DataDriven">
+        <classes>
+            <class name="tests.bai4.ReqresAuthorizationApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Bai5_Performance_SLA">
+        <classes>
+            <class name="tests.bai5.ReqresPerformanceApiTest"/>
+        </classes>
+    </test>
+
+    <test name="Bai6_Api_Ui_Integration">
+        <classes>
+            <class name="tests.bai6.ApiUiPartATest"/>
+            <class name="tests.bai6.ApiUiPartBTest"/>
+        </classes>
+    </test>
+
+    <test name="Bai7_JsonPlaceholder_Project">
+        <classes>
+            <class name="tests.bai7.PostApiTest"/>
+            <class name="tests.bai7.CommentApiTest"/>
+            <class name="tests.bai7.JsonPlaceholderUserApiTest"/>
+        </classes>
+    </test>
+</suite>

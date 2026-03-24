@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Hồ sơ cá nhân</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container topbar__inner">
+                <a class="brand" href="/">ShopContract</a>
+                <nav class="nav">
+                    <a href="/products">Sản phẩm</a>
+                    <a href="/cart">Giỏ hàng</a>
+                    <a href="/orders">Đơn hàng</a>
+                    <a href="/profile">Hồ sơ</a>
+                    <a th:if="${role == 'ADMIN'}" href="/admin">Admin</a>
+                    <a href="/logout">Đăng xuất</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="two-col">
+                <div>
+                    <div class="card" style="margin-bottom: 16px">
+                        <h1 style="margin-top: 0">Hồ sơ khách hàng</h1>
+                        <p class="muted">
+                            Quản lý thông tin cá nhân để checkout nhanh hơn.
+                        </p>
+
+                        <div style="margin-top: 14px">
+                            <p>
+                                <strong>Email:</strong>
+                                <span th:text="${user.email}"></span>
+                            </p>
+                            <p>
+                                <strong>Vai trò:</strong>
+                                <span
+                                    class="badge"
+                                    th:text="${user.role}"
+                                ></span>
+                            </p>
+                            <p>
+                                <strong>Trạng thái:</strong>
+                                <span
+                                    class="badge"
+                                    th:text="${user.status}"
+                                ></span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h2 style="margin-top: 0">Cập nhật thông tin</h2>
+
+                        <p
+                            th:if="${success}"
+                            style="color: #16a34a; font-weight: 700"
+                            th:text="${success}"
+                        ></p>
+                        <p
+                            th:if="${error}"
+                            style="color: #dc2626; font-weight: 700"
+                            th:text="${error}"
+                        ></p>
+
+                        <form
+                            method="post"
+                            action="/profile"
+                            th:object="${form}"
+                        >
+                            <div style="margin-bottom: 12px">
+                                <label>Họ và tên</label>
+                                <input
+                                    type="text"
+                                    th:field="*{fullName}"
+                                    placeholder="Nguyễn Văn A"
+                                />
+                            </div>
+
+                            <div style="margin-bottom: 12px">
+                                <label>Số điện thoại</label>
+                                <input
+                                    type="text"
+                                    th:field="*{phone}"
+                                    placeholder="0901234567"
+                                />
+                            </div>
+
+                            <div style="margin-bottom: 12px">
+                                <label>Địa chỉ</label>
+                                <input
+                                    type="text"
+                                    th:field="*{address}"
+                                    placeholder="123 Lê Lợi, Quận 1"
+                                />
+                            </div>
+
+                            <button class="btn" type="submit">
+                                Lưu thay đổi
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 style="margin-top: 0">Đổi mật khẩu</h2>
+                    <p class="muted">Tăng độ an toàn cho tài khoản của bạn.</p>
+
+                    <p
+                        th:if="${passwordSuccess}"
+                        style="color: #16a34a; font-weight: 700"
+                        th:text="${passwordSuccess}"
+                    ></p>
+                    <p
+                        th:if="${passwordError}"
+                        style="color: #dc2626; font-weight: 700"
+                        th:text="${passwordError}"
+                    ></p>
+
+                    <form
+                        method="post"
+                        action="/profile/change-password"
+                        th:object="${passwordForm}"
+                    >
+                        <div style="margin-bottom: 12px">
+                            <label>Mật khẩu hiện tại</label>
+                            <input
+                                type="password"
+                                th:field="*{currentPassword}"
+                                placeholder="Nhập mật khẩu hiện tại"
+                            />
+                        </div>
+
+                        <div style="margin-bottom: 12px">
+                            <label>Mật khẩu mới</label>
+                            <input
+                                type="password"
+                                th:field="*{newPassword}"
+                                placeholder="Tối thiểu 6 ký tự"
+                            />
+                        </div>
+
+                        <div style="margin-bottom: 12px">
+                            <label>Xác nhận mật khẩu mới</label>
+                            <input
+                                type="password"
+                                th:field="*{confirmPassword}"
+                                placeholder="Nhập lại mật khẩu mới"
+                            />
+                        </div>
+
+                        <button class="btn" type="submit">Đổi mật khẩu</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+                <small>© 2026 ShopContract</small>
+            </div>
+        </footer>
+    </body>
+</html>

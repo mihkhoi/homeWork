@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Admin Customers</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container topbar__inner">
+                <a class="brand" href="/admin">Admin Dashboard</a>
+                <nav class="nav">
+                    <a href="/admin/products">Products</a>
+                    <a href="/admin/orders">Orders</a>
+                    <a href="/admin/customers">Customers</a>
+                    <a href="/logout">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <h1>Khách hàng</h1>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Họ tên</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Status</th>
+                        <th style="width: 140px">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="u : ${customers}">
+                        <td th:text="${u.id}"></td>
+                        <td th:text="${u.fullName}"></td>
+                        <td th:text="${u.email}"></td>
+                        <td th:text="${u.phone}"></td>
+                        <td th:text="${u.address}"></td>
+                        <td>
+                            <span
+                                class="badge"
+                                th:text="${u.status}"
+                                th:style="${u.status == 'ACTIVE'} ? '' : 'background:#6b7280;'"
+                            ></span>
+                        </td>
+                        <td>
+                            <form
+                                method="post"
+                                th:action="@{/admin/customers/{id}/toggle-status(id=${u.id})}"
+                            >
+                                <button
+                                    class="btn"
+                                    type="submit"
+                                    th:text="${u.status == 'ACTIVE' ? 'Khóa' : 'Mở khóa'}"
+                                ></button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>

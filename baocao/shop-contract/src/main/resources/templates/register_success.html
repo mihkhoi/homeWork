@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Register Success</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <main class="container" style="padding-top: 40px">
+            <div
+                class="card"
+                style="max-width: 600px; margin: 0 auto; text-align: center"
+            >
+                <h1 th:text="${message}">Đăng ký thành công!</h1>
+                <p class="muted">Bạn có thể đăng nhập và mua sắm.</p>
+                <a class="btn" href="/login" style="text-decoration: none"
+                    >Đi tới đăng nhập</a
+                >
+            </div>
+        </main>
+    </body>
+</html>

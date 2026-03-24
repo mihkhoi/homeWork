@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Admin Order Detail</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container topbar__inner">
+                <a class="brand" href="/admin">Admin Dashboard</a>
+                <nav class="nav">
+                    <a href="/admin/products">Products</a>
+                    <a href="/admin/orders">Orders</a>
+                    <a href="/admin/customers">Customers</a>
+                    <a href="/logout">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <h1>Chi tiết đơn hàng admin</h1>
+
+            <div class="card" style="margin-bottom: 16px">
+                <p>
+                    <strong>Mã đơn:</strong> <span th:text="${order.id}"></span>
+                </p>
+                <p>
+                    <strong>UserId:</strong>
+                    <span th:text="${order.userId}"></span>
+                </p>
+                <p>
+                    <strong>Địa chỉ:</strong>
+                    <span th:text="${order.address}"></span>
+                </p>
+                <p>
+                    <strong>Ngày tạo:</strong>
+                    <span th:text="${order.createdAt}"></span>
+                </p>
+                <p>
+                    <strong>Trạng thái hiện tại:</strong>
+                    <span class="badge" th:text="${order.status}"></span>
+                </p>
+                <p th:if="${order.voucherCode != null}">
+                    <strong>Voucher:</strong>
+                    <span th:text="${order.voucherCode}"></span>
+                </p>
+                <p th:if="${order.discountAmount > 0}">
+                    <strong>Giảm giá:</strong>
+                    <span
+                        th:text="${#numbers.formatInteger(order.discountAmount,0,'COMMA')}"
+                    ></span>
+                    VND
+                </p>
+                <p>
+                    <strong>Tổng tiền:</strong>
+                    <span
+                        th:text="${#numbers.formatInteger(order.total,0,'COMMA')}"
+                    ></span>
+                    VND
+                </p>
+
+                <form
+                    method="post"
+                    th:action="@{/admin/orders/{id}/status(id=${order.id})}"
+                >
+                    <div class="row" style="max-width: 460px">
+                        <select name="status">
+                            <option
+                                th:value="${order.status}"
+                                th:text="${order.status}"
+                                selected
+                            ></option>
+
+                            <option
+                                value="CONFIRMED"
+                                th:if="${order.status == 'PENDING'}"
+                            >
+                                CONFIRMED
+                            </option>
+                            <option
+                                value="CANCELLED"
+                                th:if="${order.status == 'PENDING'}"
+                            >
+                                CANCELLED
+                            </option>
+
+                            <option
+                                value="SHIPPING"
+                                th:if="${order.status == 'CONFIRMED'}"
+                            >
+                                SHIPPING
+                            </option>
+                            <option
+                                value="CANCELLED"
+                                th:if="${order.status == 'CONFIRMED'}"
+                            >
+                                CANCELLED
+                            </option>
+
+                            <option
+                                value="COMPLETED"
+                                th:if="${order.status == 'SHIPPING'}"
+                            >
+                                COMPLETED
+                            </option>
+                        </select>
+
+                        <button class="btn" type="submit">
+                            Cập nhật trạng thái
+                        </button>
+                    </div>
+                </form>
+
+                <p class="muted" style="margin-top: 10px">
+                    Luồng hợp lệ: PENDING → CONFIRMED → SHIPPING → COMPLETED,
+                    hoặc PENDING / CONFIRMED → CANCELLED
+                </p>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Tạm tính</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="l : ${lines}">
+                        <td>
+                            <div
+                                style="font-weight: 800"
+                                th:text="${l.name}"
+                            ></div>
+                            <div class="muted">
+                                Mã SP: <span th:text="${l.productId}"></span>
+                            </div>
+                        </td>
+                        <td>
+                            <span
+                                th:text="${#numbers.formatInteger(l.price,0,'COMMA')}"
+                            ></span>
+                            VND
+                        </td>
+                        <td th:text="${l.qty}"></td>
+                        <td>
+                            <span
+                                th:text="${#numbers.formatInteger(l.subtotal,0,'COMMA')}"
+                            ></span>
+                            VND
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>

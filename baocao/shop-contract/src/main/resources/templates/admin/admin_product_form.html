@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Admin Product Form</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container topbar__inner">
+                <a class="brand" href="/admin">Admin Dashboard</a>
+                <nav class="nav">
+                    <a href="/admin/products">Products</a>
+                    <a href="/admin/orders">Orders</a>
+                    <a href="/admin/customers">Customers</a>
+                    <a href="/logout">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="card" style="max-width: 720px; margin: 0 auto">
+                <h1
+                    th:text="${mode == 'create' ? 'Thêm sản phẩm' : 'Cập nhật sản phẩm'}"
+                ></h1>
+                <p
+                    th:if="${error}"
+                    style="color: #ff4d4f; font-weight: 700"
+                    th:text="${error}"
+                ></p>
+
+                <form
+                    th:action="${mode == 'create'} ? @{/admin/products/new} : @{/admin/products/{id}/edit(id=${productId})}"
+                    method="post"
+                    th:object="${form}"
+                >
+                    <div style="margin-bottom: 12px">
+                        <label>Tên sản phẩm</label>
+                        <input type="text" th:field="*{name}" />
+                    </div>
+
+                    <div style="margin-bottom: 12px">
+                        <label>Mô tả</label>
+                        <input type="text" th:field="*{description}" />
+                    </div>
+
+                    <div style="margin-bottom: 12px">
+                        <label>Danh mục</label>
+                        <input type="text" th:field="*{category}" />
+                    </div>
+
+                    <div style="margin-bottom: 12px">
+                        <label>Image URL</label>
+                        <input type="text" th:field="*{imageUrl}" />
+                    </div>
+
+                    <div style="margin-bottom: 12px">
+                        <label>Giá</label>
+                        <input type="number" th:field="*{price}" />
+                    </div>
+
+                    <div style="margin-bottom: 12px">
+                        <label>Stock</label>
+                        <input type="number" th:field="*{stock}" />
+                    </div>
+
+                    <div style="margin-bottom: 12px">
+                        <label
+                            ><input type="checkbox" th:field="*{active}" />
+                            Active</label
+                        >
+                    </div>
+
+                    <button class="btn" type="submit">Lưu</button>
+                    <a
+                        class="btn btn-secondary"
+                        href="/admin/products"
+                        style="text-decoration: none; margin-left: 8px"
+                        >Quay lại</a
+                    >
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

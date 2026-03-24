@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Admin Dashboard</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container topbar__inner">
+                <a class="brand" href="/admin">Admin Dashboard</a>
+                <nav class="nav">
+                    <a href="/admin/products">Products</a>
+                    <a href="/admin/orders">Orders</a>
+                    <a href="/admin/customers">Customers</a>
+                    <a href="/products">Store</a>
+                    <a href="/logout">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <h1>Dashboard</h1>
+            <p class="muted">
+                Xin chào admin: <strong th:text="${adminEmail}"></strong>
+            </p>
+
+            <div
+                class="grid"
+                style="
+                    grid-template-columns: repeat(4, 1fr);
+                    margin-bottom: 18px;
+                "
+            >
+                <div class="card">
+                    <h3 class="product-title">Tổng sản phẩm</h3>
+                    <div class="price" th:text="${totalProducts}">0</div>
+                    <a
+                        class="btn btn-secondary"
+                        href="/admin/products"
+                        style="text-decoration: none"
+                        >Quản lý sản phẩm</a
+                    >
+                </div>
+
+                <div class="card">
+                    <h3 class="product-title">Tổng đơn hàng</h3>
+                    <div class="price" th:text="${totalOrders}">0</div>
+                    <a
+                        class="btn btn-secondary"
+                        href="/admin/orders"
+                        style="text-decoration: none"
+                        >Xem đơn hàng</a
+                    >
+                </div>
+
+                <div class="card">
+                    <h3 class="product-title">Khách hàng</h3>
+                    <div class="price" th:text="${totalCustomers}">0</div>
+                    <a
+                        class="btn btn-secondary"
+                        href="/admin/customers"
+                        style="text-decoration: none"
+                        >Quản lý khách hàng</a
+                    >
+                </div>
+
+                <div class="card">
+                    <h3 class="product-title">Đơn chờ xử lý</h3>
+                    <div class="price" th:text="${pendingOrders}">0</div>
+                    <a
+                        class="btn btn-secondary"
+                        href="/admin/orders"
+                        style="text-decoration: none"
+                        >Theo dõi trạng thái</a
+                    >
+                </div>
+            </div>
+
+            <div class="grid" style="grid-template-columns: repeat(4, 1fr)">
+                <div class="card">
+                    <h3 class="product-title">Đã xác nhận</h3>
+                    <div class="price" th:text="${confirmedOrders}">0</div>
+                </div>
+                <div class="card">
+                    <h3 class="product-title">Đang giao</h3>
+                    <div class="price" th:text="${shippingOrders}">0</div>
+                </div>
+                <div class="card">
+                    <h3 class="product-title">Hoàn tất</h3>
+                    <div class="price" th:text="${completedOrders}">0</div>
+                </div>
+                <div class="card">
+                    <h3 class="product-title">Đã hủy</h3>
+                    <div class="price" th:text="${cancelledOrders}">0</div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

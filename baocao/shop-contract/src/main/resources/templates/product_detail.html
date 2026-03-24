@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title th:text="${p.name}">Chi tiết sản phẩm</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container topbar__inner">
+                <a class="brand" href="/">ShopContract</a>
+                <nav class="nav">
+                    <a href="/products">Sản phẩm</a>
+                    <a href="/wishlist">Yêu thích</a>
+                    <a href="/cart">
+                        Giỏ hàng
+                        <span class="badge" th:text="${cartCount} ?: 0">0</span>
+                    </a>
+                    <a href="/orders">Đơn hàng</a>
+                    <a th:if="${userEmail != null}" href="/profile">Hồ sơ</a>
+                    <a th:if="${userEmail == null}" href="/login">Đăng nhập</a>
+                    <a th:if="${userEmail != null}" href="/logout">Đăng xuất</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="breadcrumb">
+                <a href="/">Trang chủ</a>
+                <span>/</span>
+                <a href="/products">Sản phẩm</a>
+                <span>/</span>
+                <span th:text="${p.name}">Tên sản phẩm</span>
+            </div>
+
+            <div
+                class="card"
+                th:if="${successWishlist}"
+                style="margin-bottom: 16px; color: #16a34a; font-weight: 700"
+            >
+                <span th:text="${successWishlist}"></span>
+            </div>
+
+            <div
+                class="card"
+                th:if="${errorWishlist}"
+                style="margin-bottom: 16px; color: #dc2626; font-weight: 700"
+            >
+                <span th:text="${errorWishlist}"></span>
+            </div>
+
+            <div
+                class="card"
+                th:if="${successReview}"
+                style="margin-bottom: 16px; color: #16a34a; font-weight: 700"
+            >
+                <span th:text="${successReview}"></span>
+            </div>
+
+            <div
+                class="card"
+                th:if="${errorReview}"
+                style="margin-bottom: 16px; color: #dc2626; font-weight: 700"
+            >
+                <span th:text="${errorReview}"></span>
+            </div>
+
+            <section class="card detail-layout">
+                <div class="detail-gallery">
+                    <img
+                        class="detail-image"
+                        th:if="${p.imageUrl != null and !#strings.isEmpty(p.imageUrl)}"
+                        th:src="${p.imageUrl}"
+                        th:alt="${p.name}"
+                    />
+                    <div
+                        class="detail-image-fallback"
+                        th:unless="${p.imageUrl != null and !#strings.isEmpty(p.imageUrl)}"
+                    >
+                        <span th:text="${p.category}">Category</span>
+                    </div>
+
+                    <div class="mini-card">
+                        <h3>Mô tả ngắn</h3>
+                        <p
+                            class="muted"
+                            style="margin: 0"
+                            th:text="${p.description}"
+                        >
+                            Mô tả
+                        </p>
+                    </div>
+                </div>
+
+                <div class="detail-panel">
+                    <div class="card-label-row">
+                        <span class="soft-badge" th:text="${p.category}"
+                            >Category</span
+                        >
+                        <span
+                            class="soft-badge soft-badge--sale"
+                            th:if="${p.price <= 150000}"
+                            >Giá tốt</span
+                        >
+                        <span
+                            class="soft-badge soft-badge--light"
+                            th:if="${p.stock > 0 and p.stock <= 5}"
+                            >Sắp hết</span
+                        >
+                    </div>
+
+                    <h1 class="detail-title" th:text="${p.name}">
+                        Tên sản phẩm
+                    </h1>
+
+                    <div class="muted">
+                        Mã SP: <strong th:text="${p.id}"></strong>
+                    </div>
+
+                    <div class="price detail-price">
+                        <span
+                            th:text="${#numbers.formatInteger(p.price, 0, 'COMMA')}"
+                            >0</span
+                        >
+                        VND
+                    </div>
+
+                    <div class="review-summary-box">
+                        <div class="review-summary-score">
+                            <strong
+                                th:text="${#numbers.formatDecimal(averageRating,1,1)}"
+                                >0.0</strong
+                            >
+                            <span>/ 5</span>
+                        </div>
+                        <div class="muted">
+                            <span th:text="${reviewCount}">0</span> đánh giá
+                        </div>
+                    </div>
+
+                    <div
+                        class="stock-text"
+                        th:classappend="${p.stock > 5} ? ' stock-good' : (${p.stock > 0} ? ' stock-low' : ' stock-out')"
+                    >
+                        <span th:if="${p.stock > 5}">Sản phẩm đang có sẵn</span>
+                        <span th:if="${p.stock > 0 and p.stock <= 5}"
+                            >Chỉ còn <span th:text="${p.stock}"></span> sản
+                            phẩm</span
+                        >
+                        <span th:if="${p.stock <= 0}">Tạm hết hàng</span>
+                    </div>
+
+                    <div class="trust-grid">
+                        <div class="mini-card">
+                            <strong>Miễn phí tư vấn</strong>
+                            <p class="muted">
+                                Hỗ trợ thông tin sản phẩm và đơn hàng.
+                            </p>
+                        </div>
+                        <div class="mini-card">
+                            <strong>Thanh toán COD</strong>
+                            <p class="muted">
+                                Nhận hàng rồi thanh toán khi demo.
+                            </p>
+                        </div>
+                        <div class="mini-card">
+                            <strong>Voucher tại checkout</strong>
+                            <p class="muted">
+                                Có thể áp mã giảm giá ở bước thanh toán.
+                            </p>
+                        </div>
+                    </div>
+
+                    <form
+                        method="post"
+                        th:action="@{/cart/add}"
+                        class="buy-box"
+                    >
+                        <input
+                            type="hidden"
+                            name="productId"
+                            th:value="${p.id}"
+                        />
+
+                        <div class="quantity-wrap">
+                            <label>Số lượng</label>
+                            <input type="number" name="qty" min="1" value="1" />
+                        </div>
+
+                        <div class="card-actions">
+                            <button
+                                class="btn btn-large"
+                                type="submit"
+                                th:disabled="${p.stock <= 0}"
+                            >
+                                Thêm vào giỏ hàng
+                            </button>
+                            <a
+                                class="btn btn-secondary btn-large"
+                                href="/products"
+                                >Tiếp tục mua sắm</a
+                            >
+                        </div>
+                    </form>
+
+                    <div class="card-actions">
+                        <form
+                            th:if="${userEmail != null and !isWished}"
+                            method="post"
+                            th:action="@{/wishlist/add}"
+                            style="margin: 0"
+                        >
+                            <input
+                                type="hidden"
+                                name="productId"
+                                th:value="${p.id}"
+                            />
+                            <input
+                                type="hidden"
+                                name="redirectTo"
+                                th:value="${'/products/' + p.id}"
+                            />
+                            <button
+                                class="btn btn-ghost btn-large"
+                                type="submit"
+                            >
+                                ♡ Thêm vào yêu thích
+                            </button>
+                        </form>
+
+                        <form
+                            th:if="${userEmail != null and isWished}"
+                            method="post"
+                            th:action="@{/wishlist/remove}"
+                            style="margin: 0"
+                        >
+                            <input
+                                type="hidden"
+                                name="productId"
+                                th:value="${p.id}"
+                            />
+                            <input
+                                type="hidden"
+                                name="redirectTo"
+                                th:value="${'/products/' + p.id}"
+                            />
+                            <button
+                                class="btn btn-ghost wished btn-large"
+                                type="submit"
+                            >
+                                ♥ Đã yêu thích
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-block">
+                <div class="section-head">
+                    <div>
+                        <h2 class="section-title">Chi tiết mô tả</h2>
+                        <p class="muted">
+                            Khối này giúp trang chi tiết sản phẩm nhìn giống web
+                            thật hơn.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <p style="margin: 0" th:text="${p.description}">
+                        Mô tả sản phẩm
+                    </p>
+                </div>
+            </section>
+
+            <section class="section-block">
+                <div class="section-head">
+                    <div>
+                        <h2 class="section-title">Đánh giá sản phẩm</h2>
+                        <p class="muted">
+                            Chỉ khách đã mua và hoàn tất đơn hàng mới được đánh
+                            giá.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="review-layout">
+                    <div class="card">
+                        <h3 style="margin-top: 0">Viết đánh giá</h3>
+
+                        <div th:if="${userEmail == null}" class="muted">
+                            Bạn cần
+                            <a
+                                href="/login"
+                                style="color: #ee4d2d; font-weight: 700"
+                                >đăng nhập</a
+                            >
+                            để đánh giá sản phẩm.
+                        </div>
+
+                        <div
+                            th:if="${userEmail != null and !canReview}"
+                            class="muted"
+                        >
+                            Bạn chỉ có thể đánh giá khi đã mua sản phẩm này và
+                            đơn hàng ở trạng thái COMPLETED, đồng thời mỗi sản
+                            phẩm chỉ được đánh giá một lần.
+                        </div>
+
+                        <form
+                            th:if="${userEmail != null and canReview}"
+                            method="post"
+                            th:action="@{/products/{id}/reviews(id=${p.id})}"
+                        >
+                            <div class="review-form-group">
+                                <label>Chấm điểm</label>
+                                <select name="rating" required>
+                                    <option value="">Chọn số sao</option>
+                                    <option value="5">5 sao</option>
+                                    <option value="4">4 sao</option>
+                                    <option value="3">3 sao</option>
+                                    <option value="2">2 sao</option>
+                                    <option value="1">1 sao</option>
+                                </select>
+                            </div>
+
+                            <div class="review-form-group">
+                                <label>Nhận xét</label>
+                                <textarea
+                                    name="comment"
+                                    rows="5"
+                                    maxlength="500"
+                                    placeholder="Viết cảm nhận của bạn về sản phẩm..."
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <button class="btn" type="submit">
+                                Gửi đánh giá
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="review-list">
+                        <div
+                            class="review-card"
+                            th:if="${#lists.isEmpty(reviews)}"
+                        >
+                            <h3>Chưa có đánh giá nào</h3>
+                            <p class="muted" style="margin: 0">
+                                Hãy là người đầu tiên đánh giá sản phẩm này.
+                            </p>
+                        </div>
+
+                        <div class="review-card" th:each="r : ${reviews}">
+                            <div class="review-card-head">
+                                <div>
+                                    <strong th:text="${r.reviewerName}"
+                                        >Tên người dùng</strong
+                                    >
+                                    <div class="muted" th:text="${r.createdAt}">
+                                        Ngày tạo
+                                    </div>
+                                </div>
+                                <div class="review-rating">
+                                    <span th:text="${r.rating}">5</span>/5
+                                </div>
+                            </div>
+
+                            <div class="review-stars">
+                                <span
+                                    th:each="i : ${#numbers.sequence(1,5)}"
+                                    th:text="${i <= r.rating ? '★' : '☆'}"
+                                    >★</span
+                                >
+                            </div>
+
+                            <p class="review-comment" th:text="${r.comment}">
+                                Nội dung đánh giá
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="section-block"
+                th:if="${!#lists.isEmpty(relatedProducts)}"
+            >
+                <div class="section-head">
+                    <div>
+                        <h2 class="section-title">Sản phẩm liên quan</h2>
+                        <p class="muted">
+                            Gợi ý thêm các sản phẩm cùng danh mục.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid product-grid">
+                    <div
+                        class="product-card"
+                        th:each="item : ${relatedProducts}"
+                    >
+                        <a
+                            th:href="@{/products/{id}(id=${item.id})}"
+                            class="product-thumb-wrap"
+                        >
+                            <img
+                                class="product-thumb-img"
+                                th:if="${item.imageUrl != null and !#strings.isEmpty(item.imageUrl)}"
+                                th:src="${item.imageUrl}"
+                                th:alt="${item.name}"
+                            />
+                            <div
+                                class="product-thumb-fallback"
+                                th:unless="${item.imageUrl != null and !#strings.isEmpty(item.imageUrl)}"
+                            >
+                                <span th:text="${item.category}">Category</span>
+                            </div>
+                        </a>
+
+                        <div class="product-meta">
+                            <h3 class="product-title">
+                                <a
+                                    th:href="@{/products/{id}(id=${item.id})}"
+                                    th:text="${item.name}"
+                                    >Tên</a
+                                >
+                            </h3>
+
+                            <div class="price">
+                                <span
+                                    th:text="${#numbers.formatInteger(item.price,0,'COMMA')}"
+                                    >0</span
+                                >
+                                VND
+                            </div>
+
+                            <div class="card-actions">
+                                <a
+                                    class="btn btn-secondary"
+                                    th:href="@{/products/{id}(id=${item.id})}"
+                                    >Xem chi tiết</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+                <small>© 2026 ShopContract</small>
+            </div>
+        </footer>
+    </body>
+</html>

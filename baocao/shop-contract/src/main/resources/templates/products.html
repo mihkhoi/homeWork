@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Danh sách sản phẩm</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container topbar__inner">
+                <a class="brand" href="/">ShopContract</a>
+                <nav class="nav">
+                    <a href="/products">Sản phẩm</a>
+                    <a href="/wishlist">Yêu thích</a>
+                    <a href="/cart">
+                        Giỏ hàng
+                        <span class="badge" th:text="${cartCount} ?: 0">0</span>
+                    </a>
+                    <a href="/orders">Đơn hàng</a>
+                    <a th:if="${userEmail != null}" href="/profile">Hồ sơ</a>
+                    <a th:if="${userEmail == null}" href="/login">Đăng nhập</a>
+                    <a
+                        th:if="${userEmail != null && role == 'ADMIN'}"
+                        href="/admin"
+                        >Admin</a
+                    >
+                    <a th:if="${userEmail != null}" href="/logout">Đăng xuất</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <section class="hero">
+                <div class="section-head section-head--tight">
+                    <div>
+                        <div class="pill">Danh sách sản phẩm</div>
+                        <h1 style="margin: 8px 0 6px">
+                            Tìm đúng món bạn cần nhanh hơn
+                        </h1>
+                        <p class="muted" style="margin: 0">
+                            Tìm kiếm theo tên, danh mục, khoảng giá, lọc còn
+                            hàng và sắp xếp theo nhu cầu.
+                        </p>
+                    </div>
+                    <div class="result-box">
+                        <strong th:text="${resultCount}">0</strong>
+                        <span>kết quả</span>
+                    </div>
+                </div>
+            </section>
+
+            <div
+                class="card"
+                th:if="${successWishlist}"
+                style="margin-bottom: 16px; color: #16a34a; font-weight: 700"
+            >
+                <span th:text="${successWishlist}"></span>
+            </div>
+
+            <div
+                class="card"
+                th:if="${errorWishlist}"
+                style="margin-bottom: 16px; color: #dc2626; font-weight: 700"
+            >
+                <span th:text="${errorWishlist}"></span>
+            </div>
+
+            <form method="get" action="/products" class="card filter-panel">
+                <div class="filter-grid">
+                    <div class="filter-field filter-field--wide">
+                        <label>Từ khóa</label>
+                        <input
+                            type="text"
+                            name="q"
+                            placeholder="Tên, mô tả hoặc danh mục..."
+                            th:value="${q}"
+                        />
+                    </div>
+
+                    <div class="filter-field">
+                        <label>Danh mục</label>
+                        <select name="category">
+                            <option value="">Tất cả</option>
+                            <option
+                                th:each="c : ${categories}"
+                                th:value="${c}"
+                                th:text="${c}"
+                                th:selected="${category == c}"
+                            >
+                                Category
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="filter-field">
+                        <label>Giá từ</label>
+                        <input
+                            type="number"
+                            min="0"
+                            name="minPrice"
+                            placeholder="0"
+                            th:value="${minPrice}"
+                        />
+                    </div>
+
+                    <div class="filter-field">
+                        <label>Đến giá</label>
+                        <input
+                            type="number"
+                            min="0"
+                            name="maxPrice"
+                            placeholder="999000"
+                            th:value="${maxPrice}"
+                        />
+                    </div>
+
+                    <div class="filter-field">
+                        <label>Sắp xếp</label>
+                        <select name="sort">
+                            <option
+                                value="newest"
+                                th:selected="${sort=='newest'}"
+                            >
+                                Mới nhất
+                            </option>
+                            <option value="name" th:selected="${sort=='name'}">
+                                Tên A-Z
+                            </option>
+                            <option
+                                value="priceAsc"
+                                th:selected="${sort=='priceAsc'}"
+                            >
+                                Giá tăng dần
+                            </option>
+                            <option
+                                value="priceDesc"
+                                th:selected="${sort=='priceDesc'}"
+                            >
+                                Giá giảm dần
+                            </option>
+                            <option
+                                value="stockDesc"
+                                th:selected="${sort=='stockDesc'}"
+                            >
+                                Nhiều hàng trước
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="filter-field filter-checkbox">
+                        <label>&nbsp;</label>
+                        <label class="checkbox-inline">
+                            <input
+                                type="checkbox"
+                                name="inStock"
+                                value="true"
+                                th:checked="${inStock}"
+                            />
+                            Chỉ hiển thị còn hàng
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-actions">
+                    <button class="btn" type="submit">Áp dụng bộ lọc</button>
+                    <a class="btn btn-secondary" href="/products">Đặt lại</a>
+                </div>
+
+                <div
+                    class="chips"
+                    th:if="${q != '' or category != '' or minPrice != '' or maxPrice != '' or inStock}"
+                >
+                    <span class="chip chip--static" th:if="${q != ''}"
+                        >Từ khóa: <strong th:text="${q}"></strong
+                    ></span>
+                    <span class="chip chip--static" th:if="${category != ''}"
+                        >Danh mục: <strong th:text="${category}"></strong
+                    ></span>
+                    <span class="chip chip--static" th:if="${minPrice != ''}"
+                        >Từ giá: <strong th:text="${minPrice}"></strong
+                    ></span>
+                    <span class="chip chip--static" th:if="${maxPrice != ''}"
+                        >Đến giá: <strong th:text="${maxPrice}"></strong
+                    ></span>
+                    <span class="chip chip--static" th:if="${inStock}"
+                        >Còn hàng</span
+                    >
+                </div>
+            </form>
+
+            <div class="grid product-grid" th:if="${!#lists.isEmpty(products)}">
+                <div class="product-card" th:each="p : ${products}">
+                    <a
+                        th:href="@{/products/{id}(id=${p.id})}"
+                        class="product-thumb-wrap"
+                    >
+                        <img
+                            class="product-thumb-img"
+                            th:if="${p.imageUrl != null and !#strings.isEmpty(p.imageUrl)}"
+                            th:src="${p.imageUrl}"
+                            th:alt="${p.name}"
+                        />
+                        <div
+                            class="product-thumb-fallback"
+                            th:unless="${p.imageUrl != null and !#strings.isEmpty(p.imageUrl)}"
+                        >
+                            <span th:text="${p.category}">Category</span>
+                        </div>
+                    </a>
+
+                    <div class="product-meta">
+                        <div class="card-label-row">
+                            <span class="soft-badge" th:text="${p.category}"
+                                >Category</span
+                            >
+                            <span
+                                class="soft-badge soft-badge--sale"
+                                th:if="${p.price <= 150000}"
+                                >Giá tốt</span
+                            >
+                            <span
+                                class="soft-badge soft-badge--light"
+                                th:if="${p.stock > 0 and p.stock <= 5}"
+                                >Sắp hết</span
+                            >
+                        </div>
+
+                        <h3 class="product-title">
+                            <a
+                                th:href="@{/products/{id}(id=${p.id})}"
+                                th:text="${p.name}"
+                                >Tên</a
+                            >
+                        </h3>
+
+                        <p
+                            class="muted line-clamp-2"
+                            th:text="${p.description}"
+                        >
+                            Mô tả ngắn
+                        </p>
+
+                        <div class="price-row">
+                            <div class="price">
+                                <span
+                                    th:text="${#numbers.formatInteger(p.price,0,'COMMA')}"
+                                    >0</span
+                                >
+                                VND
+                            </div>
+                        </div>
+
+                        <div
+                            class="stock-text"
+                            th:classappend="${p.stock > 5} ? ' stock-good' : (${p.stock > 0} ? ' stock-low' : ' stock-out')"
+                        >
+                            <span th:if="${p.stock > 5}">Còn hàng</span>
+                            <span th:if="${p.stock > 0 and p.stock <= 5}"
+                                >Còn ít: <span th:text="${p.stock}"></span
+                            ></span>
+                            <span th:if="${p.stock <= 0}">Hết hàng</span>
+                        </div>
+
+                        <div class="card-actions">
+                            <a
+                                class="btn btn-secondary"
+                                th:href="@{/products/{id}(id=${p.id})}"
+                                >Xem chi tiết</a
+                            >
+
+                            <form
+                                method="post"
+                                th:action="@{/cart/add}"
+                                style="margin: 0"
+                            >
+                                <input
+                                    type="hidden"
+                                    name="productId"
+                                    th:value="${p.id}"
+                                />
+                                <input type="hidden" name="qty" value="1" />
+                                <button
+                                    class="btn"
+                                    type="submit"
+                                    th:disabled="${p.stock <= 0}"
+                                >
+                                    Thêm vào giỏ
+                                </button>
+                            </form>
+
+                            <form
+                                th:if="${userEmail != null and !(wishlistIds != null and wishlistIds.contains(p.id))}"
+                                method="post"
+                                th:action="@{/wishlist/add}"
+                                style="margin: 0"
+                            >
+                                <input
+                                    type="hidden"
+                                    name="productId"
+                                    th:value="${p.id}"
+                                />
+                                <input
+                                    type="hidden"
+                                    name="redirectTo"
+                                    value="/products"
+                                />
+                                <button class="btn btn-ghost" type="submit">
+                                    ♡ Yêu thích
+                                </button>
+                            </form>
+
+                            <form
+                                th:if="${userEmail != null and wishlistIds != null and wishlistIds.contains(p.id)}"
+                                method="post"
+                                th:action="@{/wishlist/remove}"
+                                style="margin: 0"
+                            >
+                                <input
+                                    type="hidden"
+                                    name="productId"
+                                    th:value="${p.id}"
+                                />
+                                <input
+                                    type="hidden"
+                                    name="redirectTo"
+                                    value="/products"
+                                />
+                                <button
+                                    class="btn btn-ghost wished"
+                                    type="submit"
+                                >
+                                    ♥ Đã thích
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card empty-state" th:if="${#lists.isEmpty(products)}">
+                <h3>Không có sản phẩm phù hợp</h3>
+                <p class="muted">
+                    Thử đổi từ khóa, danh mục hoặc khoảng giá để tìm sản phẩm
+                    khác.
+                </p>
+                <a class="btn btn-secondary" href="/products"
+                    >Xem toàn bộ sản phẩm</a
+                >
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+                <small>© 2026 ShopContract</small>
+            </div>
+        </footer>
+    </body>
+</html>

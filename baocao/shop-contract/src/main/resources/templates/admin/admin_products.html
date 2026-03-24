@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Admin Products</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container topbar__inner">
+                <a class="brand" href="/admin">Admin Dashboard</a>
+                <nav class="nav">
+                    <a href="/admin/products">Products</a>
+                    <a href="/admin/orders">Orders</a>
+                    <a href="/admin/customers">Customers</a>
+                    <a href="/logout">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="row" style="margin-bottom: 14px">
+                <div>
+                    <h1 style="margin: 0">Quản lý sản phẩm</h1>
+                    <p class="muted">
+                        Admin: <span th:text="${adminEmail}"></span>
+                    </p>
+                </div>
+                <a
+                    class="btn"
+                    href="/admin/products/new"
+                    style="text-decoration: none"
+                    >+ Thêm sản phẩm</a
+                >
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Danh mục</th>
+                        <th>Giá</th>
+                        <th>Stock</th>
+                        <th>Active</th>
+                        <th style="width: 260px">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="p : ${products}">
+                        <td th:text="${p.id}"></td>
+                        <td>
+                            <div
+                                style="font-weight: 700"
+                                th:text="${p.name}"
+                            ></div>
+                            <div
+                                class="muted"
+                                th:text="${#strings.abbreviate(p.description, 60)}"
+                            ></div>
+                        </td>
+                        <td th:text="${p.category}"></td>
+                        <td>
+                            <span
+                                th:text="${#numbers.formatInteger(p.price,0,'COMMA')}"
+                            ></span>
+                            VND
+                        </td>
+                        <td th:text="${p.stock}"></td>
+                        <td>
+                            <span th:if="${p.active}" class="badge"
+                                >ACTIVE</span
+                            >
+                            <span
+                                th:if="${!p.active}"
+                                class="badge"
+                                style="background: #6b7280"
+                                >INACTIVE</span
+                            >
+                        </td>
+                        <td>
+                            <a
+                                class="btn btn-secondary"
+                                th:href="@{/admin/products/{id}/edit(id=${p.id})}"
+                                style="text-decoration: none"
+                                >Sửa</a
+                            >
+
+                            <form
+                                method="post"
+                                th:action="@{/admin/products/{id}/toggle(id=${p.id})}"
+                                style="display: inline"
+                            >
+                                <button
+                                    class="btn"
+                                    type="submit"
+                                    style="margin-left: 6px"
+                                >
+                                    <span
+                                        th:text="${p.active ? 'Ẩn' : 'Hiện'}"
+                                    ></span>
+                                </button>
+                            </form>
+
+                            <form
+                                method="post"
+                                th:action="@{/admin/products/{id}/delete(id=${p.id})}"
+                                style="display: inline"
+                                onsubmit="return confirm('Xóa sản phẩm này?')"
+                            >
+                                <button
+                                    class="btn"
+                                    type="submit"
+                                    style="
+                                        margin-left: 6px;
+                                        background: #dc2626;
+                                    "
+                                >
+                                    Xóa
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>

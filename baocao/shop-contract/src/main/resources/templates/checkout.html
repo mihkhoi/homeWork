@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Thanh toán</title>
+        <link rel="stylesheet" href="/css/app.css" />
+    </head>
+    <body>
+        <header class="topbar">
+            <div class="container topbar__inner">
+                <a class="brand" href="/">ShopContract</a>
+                <nav class="nav">
+                    <a href="/products">Sản phẩm</a>
+                    <a href="/cart"
+                        >Giỏ hàng
+                        <span class="badge" th:text="${cartCount} ?: 0"
+                            >0</span
+                        ></a
+                    >
+                    <a href="/orders">Đơn hàng</a>
+                    <a th:if="${userEmail != null}" href="/profile">Hồ sơ</a>
+                    <a th:if="${userEmail != null}" href="/logout">Đăng xuất</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <h1>Thanh toán</h1>
+            <p class="muted">
+                Xác nhận đơn hàng theo phong cách shop thương mại điện tử.
+            </p>
+
+            <p
+                th:if="${error}"
+                style="color: #ff4d4f; font-weight: 700"
+                th:text="${error}"
+            ></p>
+
+            <section class="card" style="margin-bottom: 16px">
+                <h3 style="margin-top: 0; color: #ee4d2d">
+                    📍 Địa chỉ nhận hàng
+                </h3>
+
+                <form method="post" action="/checkout">
+                    <input
+                        type="text"
+                        name="address"
+                        th:value="${address}"
+                        placeholder="Ví dụ: 123 Lê Lợi, Quận 1, TP.HCM"
+                    />
+
+                    <div style="margin-top: 18px">
+                        <h3 style="color: #ee4d2d">🛍️ Sản phẩm đặt mua</h3>
+
+                        <table class="table" th:if="${!#lists.isEmpty(lines)}">
+                            <thead>
+                                <tr>
+                                    <th>Sản phẩm</th>
+                                    <th>Đơn giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Thành tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="l : ${lines}">
+                                    <td>
+                                        <div
+                                            style="font-weight: 800"
+                                            th:text="${l.name}"
+                                        >
+                                            Tên SP
+                                        </div>
+                                        <div class="muted">
+                                            Mã SP:
+                                            <span
+                                                th:text="${l.productId}"
+                                            ></span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span
+                                            th:text="${#numbers.formatInteger(l.price,0,'COMMA')}"
+                                        ></span>
+                                        VND
+                                    </td>
+                                    <td th:text="${l.qty}">1</td>
+                                    <td>
+                                        <span
+                                            th:text="${#numbers.formatInteger(l.lineTotal,0,'COMMA')}"
+                                        ></span>
+                                        VND
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div
+                            class="card"
+                            th:if="${#lists.isEmpty(lines)}"
+                            style="margin-top: 10px"
+                        >
+                            Giỏ hàng đang trống.
+                            <a href="/products">Quay lại mua hàng</a>
+                        </div>
+                    </div>
+
+                    <div class="two-col" style="margin-top: 18px">
+                        <div class="card">
+                            <h3 style="margin-top: 0">🎫 Voucher / Ưu đãi</h3>
+                            <input
+                                type="text"
+                                name="voucherCode"
+                                th:value="${voucherCode}"
+                                placeholder="Ví dụ: SALE10 hoặc FIX50000"
+                            />
+                            <p class="muted" style="margin-top: 8px">
+                                Demo có sẵn mã: <strong>SALE10</strong> giảm 10%
+                                tối đa 50.000đ và <strong>FIX50000</strong> giảm
+                                50.000đ.
+                            </p>
+
+                            <h3>💳 Phương thức thanh toán</h3>
+                            <label
+                                style="
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 8px;
+                                "
+                            >
+                                <input type="radio" checked disabled />
+                                <span>Thanh toán khi nhận hàng (COD)</span>
+                            </label>
+                        </div>
+
+                        <div class="summary-box">
+                            <h3 style="margin-top: 0; color: #ee4d2d">
+                                🧾 Tóm tắt đơn hàng
+                            </h3>
+
+                            <div class="row" style="margin-bottom: 8px">
+                                <span class="muted">Tạm tính</span>
+                                <strong
+                                    ><span
+                                        th:text="${#numbers.formatInteger(subtotal,0,'COMMA')}"
+                                    ></span>
+                                    VND</strong
+                                >
+                            </div>
+
+                            <div class="row" style="margin-bottom: 8px">
+                                <span class="muted">Phí vận chuyển</span>
+                                <strong
+                                    ><span
+                                        th:text="${#numbers.formatInteger(shippingFee,0,'COMMA')}"
+                                    ></span>
+                                    VND</strong
+                                >
+                            </div>
+
+                            <div class="row" style="margin-bottom: 8px">
+                                <span class="muted">Giảm giá</span>
+                                <strong
+                                    >-
+                                    <span
+                                        th:text="${#numbers.formatInteger(discountAmount,0,'COMMA')}"
+                                    ></span>
+                                    VND</strong
+                                >
+                            </div>
+
+                            <hr
+                                style="
+                                    border: none;
+                                    border-top: 1px solid #ffd7ce;
+                                    margin: 12px 0;
+                                "
+                            />
+
+                            <div class="row">
+                                <span style="font-size: 18px; font-weight: 700"
+                                    >Tổng cộng</span
+                                >
+                                <strong style="font-size: 24px; color: #ee4d2d">
+                                    <span
+                                        th:text="${#numbers.formatInteger(grandTotal,0,'COMMA')}"
+                                    ></span>
+                                    VND
+                                </strong>
+                            </div>
+
+                            <button
+                                class="btn"
+                                type="submit"
+                                style="width: 100%; margin-top: 14px"
+                            >
+                                Đặt hàng
+                            </button>
+
+                            <a
+                                href="/cart"
+                                class="btn btn-secondary"
+                                style="
+                                    display: block;
+                                    text-align: center;
+                                    text-decoration: none;
+                                    margin-top: 10px;
+                                "
+                            >
+                                Quay lại giỏ hàng
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+                <small>© 2026 ShopContract</small>
+            </div>
+        </footer>
+    </body>
+</html>
