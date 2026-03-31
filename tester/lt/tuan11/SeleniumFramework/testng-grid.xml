@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Selenium Grid Parallel Tests" verbose="1" parallel="tests" thread-count="4">
+    <parameter name="browser" value="edge"/>
+    <parameter name="env" value="dev"/>
+    
+    <test name="Test 1 - Check Elements">
+        <classes>
+            <class name="tests.Bai1VerificationTest">
+                <methods>
+                    <include name="testCheckElements"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Test 2 - Check Title">
+        <classes>
+            <class name="tests.Bai1VerificationTest">
+                <methods>
+                    <include name="testCheckTitle"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Test 3 - Check Link Text">
+        <classes>
+            <class name="tests.Bai1VerificationTest">
+                <methods>
+                    <include name="testCheckLinkText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Test 4 - Parallel Execution">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.Bai1VerificationTest"/>
+        </classes>
+    </test>
+</suite>

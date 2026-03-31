@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Multi-Browser Matrix Tests" verbose="1" parallel="methods" thread-count="2">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="env" value="dev"/>
+    
+    <test name="Chrome Tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.Bai1VerificationTest"/>
+        </classes>
+    </test>
+</suite>
